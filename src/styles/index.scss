@@ -1,0 +1,17 @@
+@forward 'home';
+@use 'colors';
+
+
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: colors.$day-50;
+
+    &.night {
+        background-color: colors.$night-300;;
+    }
+};
+
+h1, h2 {
+    font-family: "Limelight", sans-serif;
+}

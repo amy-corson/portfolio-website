@@ -1,0 +1,13 @@
+@use 'colors';
+
+.home {
+    h1 {
+        color: colors.$day-300;
+    }
+}
+
+.night .home {
+    h1 {
+        color: #fff
+    }
+}

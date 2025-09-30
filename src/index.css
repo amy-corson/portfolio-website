@@ -1,1 +1,19 @@
+.home h1 {
+  color: #744B53;
+}
 
+.night .home h1 {
+  color: #fff;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #F3EBE3;
+}
+body.night {
+  background-color: #4E6255;
+}
+
+h1, h2 {
+  font-family: "Limelight", sans-serif;
+}
