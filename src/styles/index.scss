@@ -1,17 +1,56 @@
-@forward 'home';
-@use 'colors';
-
-
+@forward "home";
+@forward "city";
+@use "colors";
 
 body {
     font-family: "Inter", sans-serif;
     background-color: colors.$day-50;
+    margin: 0;
 
     &.night {
-        background-color: colors.$night-300;;
-    }
-};
+        background-color: colors.$night-300;
 
-h1, h2 {
+        nav {
+            a {
+                color: #fff;
+            }
+        }
+    }
+}
+
+.app {
+    position: relative;
+    .city {
+        z-index: 0;
+    }
+}
+
+h1,
+h2 {
     font-family: "Limelight", sans-serif;
+}
+
+.toggle {
+    position: absolute;
+}
+
+.night nav {
+    a {
+        color: #fff;
+    }
+}
+
+nav {
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+
+        a {
+            color: colors.$day-300;
+            text-decoration: none;
+            font-weight: 300;
+        }
+    }
 }

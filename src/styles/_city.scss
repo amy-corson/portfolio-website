@@ -1,0 +1,135 @@
+@use "colors";
+
+.city {
+  &:before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    border: 5px solid colors.$day-300;
+    // background: linear-gradient(to top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  }
+}
+
+.city.night {
+  background-color: colors.$night-300;
+
+  &:before {
+    border-color: #fff;
+  }
+
+  .house-base {
+    background-color: colors.$night-200;
+  }
+
+  svg {
+    .windows {
+      fill: colors.$night-50;
+    }
+
+    .accents {
+      fill: colors.$night-250;
+    }
+
+    .house {
+      fill: colors.$night-200;
+    }
+  }
+
+  .skyline {
+    fill: colors.$night-100;
+  }
+  .rail-container {
+    fill: colors.$night-300;
+  }
+  .train-car {
+    .windows {
+      fill: colors.$night-50;
+    }
+    .train {
+      fill: colors.$night-300;
+    }
+  }
+}
+
+svg.rail {
+  height: 75px;
+}
+
+svg.train-car {
+  .windows {
+    color: colors.$day-50;
+  }
+  .train {
+    color: colors.$day-300;
+  }
+}
+
+.houses {
+  height: 100px;
+  // Width here is 659
+}
+
+.city {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: -10px;
+  > * {
+    position: absolute;
+  }
+
+  .skyline {
+    bottom: 0;
+    z-index: 1;
+    min-height: 300px;
+    fill: colors.$day-100;
+  }
+  .house-container {
+    display: flex;
+    gap: 0;
+    bottom: 50px;
+    z-index: 10;
+  }
+
+    svg {
+    .windows {
+      fill: colors.$day-100;
+    }
+
+    .accents {
+      fill: colors.$day-250;
+    }
+
+    .house {
+      fill: colors.$day-200;
+    }
+  }
+
+  .house-base {
+    height: 60px;
+    width: 100%;
+    bottom: 0;
+    z-index: 11;
+    background-color: colors.$day-200;
+  }
+
+  .rail-container {
+    display: flex;
+    gap: 0;
+    bottom: 55px;
+    z-index: 5;
+    fill: colors.$day-300;
+  }
+
+  .train-cars {
+    display: flex;
+    width: 500px;
+    bottom: 130px;
+    z-index: 5;
+  }
+}

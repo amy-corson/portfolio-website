@@ -1,13 +1,42 @@
 @use 'colors';
 
-.home {
-    h1 {
-        color: colors.$day-300;
+.home-nav {
+    position: absolute;
+    top: 35%;
+    right: 35%;
+    ul {
+        flex-direction: column;
+        gap: 25px;
+        
     }
 }
 
-.night .home {
-    h1 {
-        color: #fff
+.home {
+    position: absolute;
+    color: colors.$day-300;
+    left: 20%;
+    top: 30%;
+    font-weight: 200;
+
+        h1 {
+        margin: 0;
+        font-size: 96px;
+        display: flex;
+        flex-direction: column;
+        line-height: .85;
+        font-weight: 300;
     }
+
+    p {
+        text-align: right;
+        letter-spacing: 1px;
+        margin: 0;
+    }
+
+    
+}
+
+.night .home {
+    color: #fff
+
 }

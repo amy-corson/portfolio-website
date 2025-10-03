@@ -10,14 +10,24 @@ const Nav: React.FC<NavBarProps> = () => {
   const isHome = useLocation().pathname === "/";
 
   return (
-    <nav className="home-nav">
+    <nav className={isHome ? "home-nav" : ""}>
       <ul>
-        {!isHome && <Link to={ROUTES.home}>Home</Link>}
-        <Link to={ROUTES.about}>About Me</Link>
-        <Link to={ROUTES.projects}>Projects</Link>
-        <a className="resume-link" href="">
-          Resume
-        </a>
+        {!isHome && (
+          <li>
+            <Link to={ROUTES.home}>home</Link>
+          </li>
+        )}
+        <li>
+          <Link to={ROUTES.about}>about me</Link>
+        </li>
+        <li>
+          <Link to={ROUTES.projects}>projects</Link>
+        </li>
+        <li>
+          <a className="resume-link" href="">
+            resume
+          </a>
+        </li>
       </ul>
     </nav>
   );

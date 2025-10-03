@@ -1,11 +1,11 @@
-import Button from "@mui/material/Button";
-
 const Home = () => {
-  console.log(window.location.href);
   return (
     <div className="home">
-      <h1>Amy Corson</h1>
-      <Button>mui</Button>
+      <h1>
+        <span>Amy</span>
+        <span>Corson</span>
+      </h1>
+      <p>Frontend Engineer | UX Designer</p>
     </div>
   );
 };
