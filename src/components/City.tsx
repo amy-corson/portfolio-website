@@ -7,9 +7,10 @@ import { Skyline } from "../assets/Skyline";
 interface CityProps {
   isNight: boolean;
   children?: React.ReactNode;
+  page: string;
 }
 
-const City: React.FC<CityProps> = ({ isNight, children }) => {
+const City: React.FC<CityProps> = ({ isNight, children, page }) => {
   const HOUSE_WIDTH = 659; // Width of the Houses SVG in pixels
   const RAIL_WIDTH = 125; // Width of the rail blocks SVG in pixels
   const [numHouses, setNumHouses] = useState(
@@ -19,32 +20,42 @@ const City: React.FC<CityProps> = ({ isNight, children }) => {
     Math.ceil(innerWidth / RAIL_WIDTH)
   );
 
+  const isHome = page === "home";
+
+  const Train = ({ className }: { className?: string }) => (
+    <div className={`train-cars ${className}`}>
+      <TrainCar />
+      <TrainCar />
+      <TrainCar />
+      <TrainCar />
+    </div>
+  );
+
   window.onresize = () => {
     setNumHouses(Math.ceil(innerWidth / HOUSE_WIDTH));
     setNumRailBlocks(Math.ceil(innerWidth / RAIL_WIDTH));
   };
 
   return (
-    <div className={`city ${isNight ? "night" : ""}`}>
+    <div className={`city ${isNight ? "night" : ""} ${page}-page`}>
       {children}
-      <div className="train-cars">
-        <TrainCar />
-        <TrainCar />
-        <TrainCar />
-        <TrainCar />
-      </div>
-
-      <div className="house-container">
-        {Array.from({ length: numHouses }, (_, i) => (
-          <Houses key={i} />
-        ))}
-      </div>
+      {isHome && (
+        <>
+          <Train className="train-1" />
+          <Train className="train-2" />
+          <div className="house-container">
+            {Array.from({ length: numHouses }, (_, i) => (
+              <Houses key={i} />
+            ))}
+          </div>
+          <div className="rail-container">
+            {Array.from({ length: numRailBlocks }, (_, i) => (
+              <Rail key={i} />
+            ))}
+          </div>
+        </>
+      )}
       <div className="house-base"></div>
-      <div className="rail-container">
-        {Array.from({ length: numRailBlocks }, (_, i) => (
-          <Rail key={i} />
-        ))}
-      </div>
       <Skyline />
     </div>
   );

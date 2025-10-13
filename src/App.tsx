@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router";
+import { Routes, Route, useLocation } from "react-router";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -9,8 +9,9 @@ import City from "./components/City";
 
 function App() {
   const [isNight, setIsNight] = useState(false);
+  const path = useLocation().pathname.replace("/", "");
   return (
-    <City isNight={isNight}>
+    <City isNight={isNight} page={path ? path : "home"}>
       <button className="toggle" onClick={() => setIsNight(!isNight)}>
         toggle d/n
       </button>

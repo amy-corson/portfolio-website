@@ -14,14 +14,25 @@
 }
 
 .city.night {
-  background-color: colors.$night-300;
+  background-color: colors.$night-100;
 
   &:before {
     border-color: #fff;
   }
 
+  &.home-page {
+
+    background-color: colors.$night-300;
+    .house-base {
+      background-color: colors.$night-100;
+    }
+    .skyline {
+      fill: colors.$night-100;
+    }
+  }
+
   .house-base {
-    background-color: colors.$night-200;
+    background-color: colors.$night-300;
   }
 
   svg {
@@ -39,7 +50,7 @@
   }
 
   .skyline {
-    fill: colors.$night-100;
+    fill: colors.$night-300;
   }
   .rail-container {
     fill: colors.$night-300;
@@ -84,11 +95,36 @@ svg.train-car {
   }
 
   .skyline {
-    bottom: 0;
+    top: 7%;
     z-index: 1;
     min-height: 300px;
     fill: colors.$day-100;
   }
+
+  &.home-page {
+    .skyline {
+      top: auto;
+      bottom: 0;
+    }
+
+    .house-base {
+      top: auto;
+      height: 60px;
+      width: 100%;
+      bottom: 0;
+      z-index: 11;
+      background-color: colors.$day-200;
+    }
+  }
+
+  .house-base {
+    top: 25%;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+    background-color: colors.$day-100;
+  }
+
   .house-container {
     display: flex;
     gap: 0;
@@ -96,7 +132,7 @@ svg.train-car {
     z-index: 10;
   }
 
-    svg {
+  svg {
     .windows {
       fill: colors.$day-100;
     }
@@ -110,14 +146,6 @@ svg.train-car {
     }
   }
 
-  .house-base {
-    height: 60px;
-    width: 100%;
-    bottom: 0;
-    z-index: 11;
-    background-color: colors.$day-200;
-  }
-
   .rail-container {
     display: flex;
     gap: 0;
@@ -128,7 +156,7 @@ svg.train-car {
 
   .train-cars {
     display: flex;
-    width: 500px;
+    width: 300px;
     bottom: 130px;
     z-index: 5;
   }

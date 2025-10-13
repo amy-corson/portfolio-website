@@ -41,11 +41,15 @@ h2 {
 }
 
 nav {
+    top: 30px;
+    right: 50%;
+    transform: translateX(50%);
     ul {
         list-style: none;
         margin: 0;
         padding: 0;
         display: flex;
+        gap: 25px;
 
         a {
             color: colors.$day-300;

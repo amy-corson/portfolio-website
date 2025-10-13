@@ -44,13 +44,22 @@
 }
 
 .city.night {
-  background-color: #4E6255;
+  background-color: #9CA7A0;
 }
 .city.night:before {
   border-color: #fff;
 }
+.city.night.home-page {
+  background-color: #4E6255;
+}
+.city.night.home-page .house-base {
+  background-color: #9CA7A0;
+}
+.city.night.home-page .skyline {
+  fill: #9CA7A0;
+}
 .city.night .house-base {
-  background-color: #829087;
+  background-color: #4E6255;
 }
 .city.night svg .windows {
   fill: #DBDEDC;
@@ -62,7 +71,7 @@
   fill: #829087;
 }
 .city.night .skyline {
-  fill: #9CA7A0;
+  fill: #4E6255;
 }
 .city.night .rail-container {
   fill: #4E6255;
@@ -101,10 +110,29 @@ svg.train-car .train {
   position: absolute;
 }
 .city .skyline {
-  bottom: 0;
+  top: 7%;
   z-index: 1;
   min-height: 300px;
   fill: #e9d0ca;
+}
+.city.home-page .skyline {
+  top: auto;
+  bottom: 0;
+}
+.city.home-page .house-base {
+  top: auto;
+  height: 60px;
+  width: 100%;
+  bottom: 0;
+  z-index: 11;
+  background-color: #c7aba8;
+}
+.city .house-base {
+  top: 25%;
+  width: 100%;
+  bottom: 0;
+  z-index: 1;
+  background-color: #e9d0ca;
 }
 .city .house-container {
   display: flex;
@@ -121,13 +149,6 @@ svg.train-car .train {
 .city svg .house {
   fill: #c7aba8;
 }
-.city .house-base {
-  height: 60px;
-  width: 100%;
-  bottom: 0;
-  z-index: 11;
-  background-color: #c7aba8;
-}
 .city .rail-container {
   display: flex;
   gap: 0;
@@ -137,7 +158,7 @@ svg.train-car .train {
 }
 .city .train-cars {
   display: flex;
-  width: 500px;
+  width: 300px;
   bottom: 130px;
   z-index: 5;
 }
@@ -174,11 +195,17 @@ h2 {
   color: #fff;
 }
 
+nav {
+  top: 30px;
+  right: 50%;
+  transform: translateX(50%);
+}
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
+  gap: 25px;
 }
 nav ul a {
   color: #744B53;
