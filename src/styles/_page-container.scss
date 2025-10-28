@@ -1,0 +1,19 @@
+@use 'colors';
+
+.night {
+    .page-container {
+        color: #fff;
+    }
+}
+.page-container {
+    position: relative;
+    top: 200px;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 5;
+    color: colors.$day-300;
+    h1 {
+        margin-top: 2em;
+    }
+}

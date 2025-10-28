@@ -1,30 +1,18 @@
 @use 'colors';
 
-.home-nav {
-    position: absolute;
-    top: 35%;
-    right: 35%;
-    ul {
-        flex-direction: column;
-        gap: 25px;
-        
-    }
-}
-
 .home {
     position: absolute;
     color: colors.$day-300;
     left: 20%;
-    top: 30%;
+    top: 35%;
     font-weight: 200;
 
         h1 {
         margin: 0;
-        font-size: 96px;
-        display: flex;
-        flex-direction: column;
+        font-size: 80px;
         line-height: .85;
         font-weight: 300;
+        letter-spacing: -1px;
     }
 
     p {

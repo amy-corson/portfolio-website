@@ -1,10 +1,7 @@
 const Home = () => {
   return (
     <div className="home">
-      <h1>
-        <span>Amy</span>
-        <span>Corson</span>
-      </h1>
+      <h1>amy corson</h1>
       <p>Frontend Engineer | UX Designer</p>
     </div>
   );

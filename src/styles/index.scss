@@ -1,21 +1,11 @@
 @forward "home";
 @forward "city";
+@forward "page-container";
 @use "colors";
 
 body {
     font-family: "Inter", sans-serif;
-    background-color: colors.$day-50;
     margin: 0;
-
-    &.night {
-        background-color: colors.$night-300;
-
-        nav {
-            a {
-                color: #fff;
-            }
-        }
-    }
 }
 
 .app {
@@ -27,7 +17,7 @@ body {
 
 h1,
 h2 {
-    font-family: "Limelight", sans-serif;
+    font-family: "Hedvig Letters Serif", serif;
 }
 
 .toggle {

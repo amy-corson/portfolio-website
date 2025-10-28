@@ -1,27 +1,16 @@
-.home-nav {
-  position: absolute;
-  top: 35%;
-  right: 35%;
-}
-.home-nav ul {
-  flex-direction: column;
-  gap: 25px;
-}
-
 .home {
   position: absolute;
   color: #744B53;
   left: 20%;
-  top: 30%;
+  top: 35%;
   font-weight: 200;
 }
 .home h1 {
   margin: 0;
-  font-size: 96px;
-  display: flex;
-  flex-direction: column;
+  font-size: 80px;
   line-height: 0.85;
   font-weight: 300;
+  letter-spacing: -1px;
 }
 .home p {
   text-align: right;
@@ -42,9 +31,47 @@
   right: 10px;
   border: 5px solid #744B53;
 }
+.city .moon {
+  display: none;
+}
+.city .sun {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  position: absolute;
+  top: 15%;
+  right: 20%;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.city .sun > div {
+  width: 75px;
+  height: 75px;
+  background: white;
+  border-radius: 50px;
+  opacity: 100%;
+  z-index: 1000;
+}
 
 .city.night {
-  background-color: #9CA7A0;
+  background-color: #6d7f76;
+}
+.city.night .sun {
+  display: none;
+}
+.city.night .moon {
+  display: block;
+  position: absolute;
+  top: 17%;
+  right: 22%;
+  color: white;
+  width: 100px;
+  height: 100px;
+  opacity: 90%;
+  transform: rotateY(180deg) rotate(25deg);
 }
 .city.night:before {
   border-color: #fff;
@@ -104,16 +131,17 @@ svg.train-car .train {
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  z-index: -10px;
+  z-index: -10;
+  background-color: #F3EBE3;
 }
 .city > * {
   position: absolute;
 }
 .city .skyline {
-  top: 7%;
+  top: 50px;
   z-index: 1;
   min-height: 300px;
-  fill: #e9d0ca;
+  fill: #E7D6D2;
 }
 .city.home-page .skyline {
   top: auto;
@@ -132,7 +160,7 @@ svg.train-car .train {
   width: 100%;
   bottom: 0;
   z-index: 1;
-  background-color: #e9d0ca;
+  background-color: #E7D6D2;
 }
 .city .house-container {
   display: flex;
@@ -163,16 +191,26 @@ svg.train-car .train {
   z-index: 5;
 }
 
+.night .page-container {
+  color: #fff;
+}
+
+.page-container {
+  position: relative;
+  top: 200px;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 5;
+  color: #744B53;
+}
+.page-container h1 {
+  margin-top: 2em;
+}
+
 body {
   font-family: "Inter", sans-serif;
-  background-color: #F3EBE3;
   margin: 0;
-}
-body.night {
-  background-color: #4E6255;
-}
-body.night nav a {
-  color: #fff;
 }
 
 .app {
@@ -184,7 +222,7 @@ body.night nav a {
 
 h1,
 h2 {
-  font-family: "Limelight", sans-serif;
+  font-family: "Hedvig Letters Serif", serif;
 }
 
 .toggle {

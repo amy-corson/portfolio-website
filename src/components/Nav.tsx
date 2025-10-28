@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router";
+import { Link } from "react-router";
 import { ROUTES } from "../util/constants";
 
 import React from "react";
@@ -7,25 +7,21 @@ import React from "react";
 interface NavBarProps {}
 
 const Nav: React.FC<NavBarProps> = () => {
-  const isHome = useLocation().pathname === "/";
-
   return (
-    <nav className={isHome ? "home-nav" : ""}>
+    <nav>
       <ul>
-        {!isHome && (
-          <li>
-            <Link to={ROUTES.home}>home</Link>
-          </li>
-        )}
         <li>
-          <Link to={ROUTES.about}>about me</Link>
+          <Link to={ROUTES.home}>Home</Link>
         </li>
         <li>
-          <Link to={ROUTES.projects}>projects</Link>
+          <Link to={ROUTES.about}>About Me</Link>
+        </li>
+        <li>
+          <Link to={ROUTES.projects}>Projects</Link>
         </li>
         <li>
           <a className="resume-link" href="">
-            resume
+            Resume
           </a>
         </li>
       </ul>

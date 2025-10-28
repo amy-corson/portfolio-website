@@ -3,6 +3,7 @@ import { Houses } from "../assets/Houses";
 import { TrainCar } from "../assets/TrainCar";
 import { Rail } from "../assets/Rail";
 import { Skyline } from "../assets/Skyline";
+import Brightness3Icon from "@mui/icons-material/Brightness3";
 
 interface CityProps {
   isNight: boolean;
@@ -41,6 +42,10 @@ const City: React.FC<CityProps> = ({ isNight, children, page }) => {
       {children}
       {isHome && (
         <>
+          <Brightness3Icon className="moon" />
+          <div className="sun">
+            <div />
+          </div>
           <Train className="train-1" />
           <Train className="train-2" />
           <div className="house-container">
