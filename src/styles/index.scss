@@ -1,5 +1,6 @@
 @forward "home";
 @forward "city";
+@forward "nav";
 @forward "page-container";
 @use "colors";
 
@@ -18,10 +19,6 @@ body {
 h1,
 h2 {
     font-family: "Hedvig Letters Serif", serif;
-}
-
-.toggle {
-    position: absolute;
 }
 
 .night nav {

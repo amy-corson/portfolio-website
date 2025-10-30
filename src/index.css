@@ -80,7 +80,7 @@
   background-color: #4E6255;
 }
 .city.night.home-page .house-base {
-  background-color: #9CA7A0;
+  background-color: #829087;
 }
 .city.night.home-page .skyline {
   fill: #9CA7A0;
@@ -191,6 +191,13 @@ svg.train-car .train {
   z-index: 5;
 }
 
+.nav-ribbon {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .night .page-container {
   color: #fff;
 }
@@ -223,10 +230,6 @@ body {
 h1,
 h2 {
   font-family: "Hedvig Letters Serif", serif;
-}
-
-.toggle {
-  position: absolute;
 }
 
 .night nav a {
