@@ -1,6 +1,13 @@
 @use "colors";
 
 .city {
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+  background-color: colors.$day-50;
+  overflow-x: hidden;
+
   // Border
   &:before {
     content: "";
@@ -10,7 +17,7 @@
     bottom: 10px;
     right: 10px;
     border: 5px solid colors.$day-300;
-    z-index: 5;
+    z-index: 2;
     // background: linear-gradient(to top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   }
 
@@ -129,23 +136,6 @@ svg.train-car {
 }
 
 .city {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -10;
-  background-color: colors.$day-50;
-  overflow-x: hidden;
-
-
-  .skyline {
-    position: absolute;
-    top: 35px;
-    z-index: 1;
-    min-height: 300px;
-    fill: #e7d6d2;
-  }
-
   &.home-page {
     overflow: hidden;
     height: 100vh;
@@ -155,11 +145,13 @@ svg.train-car {
     }
 
     .skyline {
+      position: absolute;
       top: auto;
       bottom: 0;
     }
 
     .house-base {
+      position: absolute;
       top: auto;
       height: 60px;
       width: 100%;
@@ -169,11 +161,19 @@ svg.train-car {
     }
   }
 
+  .skyline {
+    position: relative;
+    top: 35px;
+    z-index: 1;
+    min-height: 300px;
+    fill: #e7d6d2;
+  }
+
   .house-base {
-    top: 25%;
+    position: relative;
+    margin-top: -100px;
     width: 100%;
     bottom: 0;
-    z-index: 1;
     background-color: #e7d6d2;
   }
 

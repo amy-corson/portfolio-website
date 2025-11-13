@@ -4,32 +4,38 @@ import { useState } from "react";
 import City from "./components/City";
 import Ribbon from "./components/Ribbon";
 import { ROUTES } from "./util/constants";
+import { Skyline } from "./assets/Skyline";
 
 function App() {
   const [isNight, setIsNight] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const path = useLocation().pathname.replace("/", "");
+  const page = path ? path : "home";
   window.onresize = () => {};
   return (
-    <City isNight={isNight} page={path ? path : "home"}>
+    <div className={`city ${isNight ? "night" : ""} ${page}-page`}>
       <Ribbon
         setDrawerOpen={setDrawerOpen}
         drawerOpen={drawerOpen}
         toggleIsNight={() => setIsNight(!isNight)}
         isNight={isNight}
       />
-      <Routes>
-        <Route path={ROUTES.home.url} element={ROUTES.home.component} />
-        <Route path={ROUTES.about.url} element={ROUTES.about.component} />
-        <Route path={ROUTES.projects.url}>
-          <Route index element={ROUTES.projects.component} />
-          <Route
-            path="advanced-settings"
-            element={<div>this is advancedsettings</div>}
-          />
-        </Route>
-      </Routes>
-    </City>
+      <Skyline />
+      <div className="house-base">
+        <Routes>
+          <Route path={ROUTES.home.url} element={ROUTES.home.component} />
+          <Route path={ROUTES.about.url} element={ROUTES.about.component} />
+          <Route path={ROUTES.projects.url}>
+            <Route index element={ROUTES.projects.component} />
+            <Route
+              path="advanced-settings"
+              element={<div>this is advancedsettings</div>}
+            />
+          </Route>
+        </Routes>
+      </div>
+      <City isNight={isNight} page={page}></City>
+    </div>
   );
 }
 

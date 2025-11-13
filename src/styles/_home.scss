@@ -1,7 +1,7 @@
 @use "colors";
 
 .home {
-    position: absolute;
+    position: fixed;
     color: colors.$day-300;
     left: 20%;
     top: 35%;

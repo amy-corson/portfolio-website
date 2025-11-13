@@ -7,10 +7,10 @@
 }
 .page-container {
     position: relative;
-    top: 25vh;
     width: 85%;
     max-width: 800px;
     margin: 0 auto;
     z-index: 5;
     color: colors.$day-300;
+    padding-bottom: 20px;
 }

@@ -1,5 +1,5 @@
 .home {
-  position: absolute;
+  position: fixed;
   color: #744B53;
   left: 20%;
   top: 35%;
@@ -46,6 +46,14 @@
     margin: 10px 0 0 0;
   }
 }
+.city {
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+  background-color: #F3EBE3;
+  overflow-x: hidden;
+}
 .city:before {
   content: "";
   position: absolute;
@@ -54,7 +62,7 @@
   bottom: 10px;
   right: 10px;
   border: 5px solid #744B53;
-  z-index: 5;
+  z-index: 2;
 }
 .city .moon {
   display: none;
@@ -150,22 +158,6 @@ svg.train-car .train {
   height: 100px;
 }
 
-.city {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -10;
-  background-color: #F3EBE3;
-  overflow-x: hidden;
-}
-.city .skyline {
-  position: absolute;
-  top: 35px;
-  z-index: 1;
-  min-height: 300px;
-  fill: #e7d6d2;
-}
 .city.home-page {
   overflow: hidden;
   height: 100vh;
@@ -174,10 +166,12 @@ svg.train-car .train {
   position: absolute;
 }
 .city.home-page .skyline {
+  position: absolute;
   top: auto;
   bottom: 0;
 }
 .city.home-page .house-base {
+  position: absolute;
   top: auto;
   height: 60px;
   width: 100%;
@@ -185,11 +179,18 @@ svg.train-car .train {
   z-index: 11;
   background-color: #c7aba8;
 }
+.city .skyline {
+  position: relative;
+  top: 35px;
+  z-index: 1;
+  min-height: 300px;
+  fill: #e7d6d2;
+}
 .city .house-base {
-  top: 25%;
+  position: relative;
+  margin-top: -100px;
   width: 100%;
   bottom: 0;
-  z-index: 1;
   background-color: #e7d6d2;
 }
 .city .house-container {
@@ -353,12 +354,12 @@ nav ul a {
 
 .page-container {
   position: relative;
-  top: 25vh;
   width: 85%;
   max-width: 800px;
   margin: 0 auto;
   z-index: 5;
   color: #744B53;
+  padding-bottom: 20px;
 }
 
 .project-card {

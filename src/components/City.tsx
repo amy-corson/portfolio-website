@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Houses } from "../assets/Houses";
 import { TrainCar } from "../assets/TrainCar";
 import { Rail } from "../assets/Rail";
-import { Skyline } from "../assets/Skyline";
 import Brightness3Icon from "@mui/icons-material/Brightness3";
 
 interface CityProps {
@@ -11,7 +10,7 @@ interface CityProps {
   page: string;
 }
 
-const City: React.FC<CityProps> = ({ isNight, children, page }) => {
+const City: React.FC<CityProps> = ({ page }) => {
   const HOUSE_WIDTH = 659; // Width of the Houses SVG in pixels
   const RAIL_WIDTH = 125; // Width of the rail blocks SVG in pixels
   const [numHouses, setNumHouses] = useState(
@@ -38,8 +37,7 @@ const City: React.FC<CityProps> = ({ isNight, children, page }) => {
   };
 
   return (
-    <div className={`city ${isNight ? "night" : ""} ${page}-page`}>
-      {children}
+    <>
       {isHome && (
         <>
           <Brightness3Icon className="moon" />
@@ -60,9 +58,7 @@ const City: React.FC<CityProps> = ({ isNight, children, page }) => {
           </div>
         </>
       )}
-      <div className="house-base"></div>
-      <Skyline />
-    </div>
+    </>
   );
 };
 
