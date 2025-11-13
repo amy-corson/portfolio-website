@@ -1,28 +1,56 @@
 import Nav from "./Nav";
 import MenuIcon from "@mui/icons-material/Menu";
+import BedtimeIcon from "@mui/icons-material/Bedtime";
+import SunnyIcon from "@mui/icons-material/Sunny";
 import CloseIcon from "@mui/icons-material/Close";
+import Drawer from "@mui/material/Drawer";
 
 interface RibbonProps {
-  isMobile: boolean;
-  toggleDrawer: () => void;
-  toggleIsNight: () => void;
+  setDrawerOpen: (open: boolean) => void;
   drawerOpen: boolean;
+  toggleIsNight: () => void;
+  isNight: boolean;
 }
 
 const Ribbon: React.FC<RibbonProps> = ({
-  toggleDrawer,
+  setDrawerOpen,
   drawerOpen,
-  isMobile,
   toggleIsNight,
+  isNight,
 }) => {
   return (
     <div className="nav-ribbon">
-      <button className="toggle" onClick={() => toggleIsNight()}>
-        toggle d/n
+      <button className="day-night-toggle" onClick={() => toggleIsNight()}>
+        {isNight ? <BedtimeIcon /> : <SunnyIcon />}
       </button>
-      <button onClick={() => toggleDrawer()}>
-        {drawerOpen ? <CloseIcon /> : <MenuIcon />}
+      <Nav />
+      <button className="nav-drawer-toggle" onClick={() => setDrawerOpen(true)}>
+        <MenuIcon fontSize="large" />
       </button>
+      <Drawer
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        anchor="right"
+        slotProps={{
+          paper: {
+            sx: {
+              backgroundColor: isNight ? "#4E6255" : "#F3EBE3",
+              color: isNight ? "#fff" : "#744B53",
+              width: "100%",
+            },
+          },
+        }}
+      >
+        <div className="drawer-container">
+          <button
+            onClick={() => setDrawerOpen(false)}
+            className="close-drawer-button"
+          >
+            <CloseIcon />
+          </button>
+          <Nav />
+        </div>
+      </Drawer>
     </div>
   );
 };

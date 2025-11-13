@@ -1,4 +1,4 @@
-@use 'colors';
+@use "colors";
 
 .home {
     position: absolute;
@@ -7,10 +7,10 @@
     top: 35%;
     font-weight: 200;
 
-        h1 {
+    h1 {
         margin: 0;
         font-size: 80px;
-        line-height: .85;
+        line-height: 0.85;
         font-weight: 300;
         letter-spacing: -1px;
     }
@@ -20,11 +20,40 @@
         letter-spacing: 1px;
         margin: 0;
     }
-
-    
 }
 
 .night .home {
-    color: #fff
+    color: #fff;
+}
 
+@media (max-width: 700px) {
+    .home {
+        left: 15%;
+        h1 {
+            font-size: 65px;
+        }
+        p {
+        text-align: right;
+        margin: 3px -50px 0 0;
+    }
+    }
+}
+
+@media (max-width: 490px) {
+    .home {
+        left: 12%;
+        h1 {
+            font-size: 48px;
+        }
+
+        p {
+            // display: flex;
+            flex-direction: column;
+            margin:10px 0 0 0;
+
+            // span:nth-child(2) {
+            //     display: none;
+            // }
+        }
+    }
 }

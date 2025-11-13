@@ -1,6 +1,136 @@
+@use "colors";
+
+nav {
+    display: contents;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 25px;
+
+        li {
+            display: flex;
+            align-items: center;
+        }
+
+        a {
+            color: colors.$day-300;
+            text-decoration: none;
+            font-weight: 300;
+        }
+    }
+}
+
 .nav-ribbon {
     position: absolute;
-    width: 100%;
     display: flex;
     justify-content: space-between;
+    left: 30px;
+    right: 30px;
+    top: 30px;
+    z-index: 900;
+
+    .nav-drawer-toggle {
+        display: none;
+        background: transparent;
+        border: none;
+        color: colors.$day-300;
+    }
+
+    .day-night-toggle {
+        background-color: #fff;
+        border: none;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        display: flex;
+        align-items: center;
+        width: 70px;
+        height: 35px;
+        border-radius: 20px;
+        z-index: 20;
+        cursor: pointer;
+        position: relative;
+
+        svg {
+            color: colors.$day-250;
+            padding-left: 35px;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 5px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50px;
+            background-color: colors.$day-300;
+        }
+    }
+}
+
+.night .nav-ribbon {
+    .nav-drawer-toggle {
+        color: #fff;
+    }
+    .day-night-toggle {
+        background-color: colors.$night-50;
+
+        svg {
+            color: colors.$night-300;
+            padding: 0;
+        }
+
+        &:before {
+            background-color: colors.$night-300;
+            right: 5px;
+            left: auto;
+        }
+    }
+    nav {
+        a {
+            color: #fff;
+        }
+    }
+}
+
+.drawer-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .close-drawer-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: transparent;
+        border: none;
+        color: colors.$day-300;
+    }
+
+    .internal-links {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 80px;
+        font-size: 20px;
+        
+        li a {
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .nav-ribbon {
+        .nav-drawer-toggle {
+            display: block;
+        }
+
+        nav {
+            display: none;
+        }
+    }
 }

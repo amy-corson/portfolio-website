@@ -1,15 +1,14 @@
+import ProjectCard from "../components/ProjectCard";
+import { ProjectsList } from "../util/constants";
+
 const Projects = () => {
   return (
     <div className="projects-page page-container">
       <h1>projects</h1>
-      <a href="" className="project-card">
-        <h2>case study: advanced settings panel</h2>
-        <span>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sem
-          et diam egestas aliquam. Donec tellus erat, dignissim nec velit sit
-          amet, eleifend consequat.
-        </span>
-      </a>
+
+      {ProjectsList.map((project) => (
+        <ProjectCard key={project.title} project={project} />
+      ))}
     </div>
   );
 };

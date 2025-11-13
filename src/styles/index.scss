@@ -2,11 +2,13 @@
 @forward "city";
 @forward "nav";
 @forward "page-container";
+@forward "projects";
 @use "colors";
 
 body {
     font-family: "Inter", sans-serif;
     margin: 0;
+    padding: 0;
 }
 
 .app {
@@ -16,32 +18,8 @@ body {
     }
 }
 
-h1,
-h2 {
+h1, h2 {
     font-family: "Hedvig Letters Serif", serif;
 }
 
-.night nav {
-    a {
-        color: #fff;
-    }
-}
 
-nav {
-    top: 30px;
-    right: 50%;
-    transform: translateX(50%);
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 25px;
-
-        a {
-            color: colors.$day-300;
-            text-decoration: none;
-            font-weight: 300;
-        }
-    }
-}

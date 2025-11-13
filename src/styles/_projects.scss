@@ -1,0 +1,72 @@
+@use "colors";
+
+.project-card {
+    margin: 2em 0;
+    .project-tags {
+        margin-top: 10px;
+        display: flex;
+        gap: 5px;
+
+        .project-tag {
+            border: 1px solid colors.$day-300;
+            padding: 5px 10px;
+            font-weight: 300;
+        }
+    }
+    .project-image {
+        background-color: colors.$day-300;
+        max-width: 700px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            border: 3px solid #fff;
+            top: 10px;
+            left: 10px;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        img {
+            max-height: 200px;
+            width: 90%;
+            object-fit: contain;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    h2,
+    p {
+        margin: 10px 0;
+        color: #000;
+    }
+
+    h2, a, p {
+        font-weight: 300;
+    }
+
+
+}
+
+.night .project-card {
+    .project-tags .project-tag {
+        border: 1px solid #fff;
+    }
+
+    .project-image {
+        background-color: colors.$night-100;
+    }
+
+    a {
+        color: #fff;
+    }
+}
