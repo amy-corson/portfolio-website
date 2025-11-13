@@ -6,8 +6,11 @@ const Projects = () => {
     <div className="projects-page page-container">
       <h1>projects</h1>
 
-      {ProjectsList.map((project) => (
-        <ProjectCard key={project.title} project={project} />
+      {ProjectsList.map((project, i, a) => (
+        <>
+          <ProjectCard key={project.title} project={project} />{" "}
+          {i + 1 != a.length && <hr />}
+        </>
       ))}
     </div>
   );

@@ -4,7 +4,7 @@ import { useState } from "react";
 import City from "./components/City";
 import Ribbon from "./components/Ribbon";
 import { ROUTES } from "./util/constants";
-import { Skyline } from "./assets/Skyline";
+import { Skyline } from "./assets/city/Skyline";
 
 function App() {
   const [isNight, setIsNight] = useState(false);

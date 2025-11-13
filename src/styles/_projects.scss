@@ -1,21 +1,31 @@
 @use "colors";
 
+hr {
+    border-color: colors.$day-200;
+    border-style: solid;
+}
+
+.night hr {
+    border-color: #ffffff90;
+}
+
 .project-card {
-    margin: 2em 0;
+    margin: 3em 0;
     .project-tags {
         margin-top: 10px;
         display: flex;
         gap: 5px;
+        flex-wrap: wrap;
 
         .project-tag {
             border: 1px solid colors.$day-300;
-            padding: 5px 10px;
+            padding: 5px 12px;
             font-weight: 300;
         }
     }
     .project-image {
         background-color: colors.$day-300;
-        max-width: 700px;
+        max-width: 800px;
         padding: 20px;
         display: flex;
         justify-content: center;
@@ -41,20 +51,20 @@
 
     a {
         text-decoration: none;
-        color: #000;
+        color: colors.$day-300;
+        font-style: italic;
     }
 
     h2,
     p {
         margin: 10px 0;
-        color: #000;
+        color: #333;
     }
 
-    h2, a, p {
+    h2,
+    p {
         font-weight: 300;
     }
-
-
 }
 
 .night .project-card {
@@ -66,6 +76,8 @@
         background-color: colors.$night-100;
     }
 
+    h2,
+    p,
     a {
         color: #fff;
     }

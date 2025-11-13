@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Houses } from "../assets/Houses";
-import { TrainCar } from "../assets/TrainCar";
-import { Rail } from "../assets/Rail";
+import { Houses } from "../assets/city/Houses";
+import { TrainCar } from "../assets/city/TrainCar";
+import { Rail } from "../assets/city/Rail";
 import Brightness3Icon from "@mui/icons-material/Brightness3";
 
 interface CityProps {

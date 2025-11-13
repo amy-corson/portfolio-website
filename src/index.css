@@ -355,29 +355,39 @@ nav ul a {
 .page-container {
   position: relative;
   width: 85%;
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
   z-index: 5;
   color: #744B53;
   padding-bottom: 20px;
 }
 
+hr {
+  border-color: #c7aba8;
+  border-style: solid;
+}
+
+.night hr {
+  border-color: rgba(255, 255, 255, 0.5647058824);
+}
+
 .project-card {
-  margin: 2em 0;
+  margin: 3em 0;
 }
 .project-card .project-tags {
   margin-top: 10px;
   display: flex;
   gap: 5px;
+  flex-wrap: wrap;
 }
 .project-card .project-tags .project-tag {
   border: 1px solid #744B53;
-  padding: 5px 10px;
+  padding: 5px 12px;
   font-weight: 300;
 }
 .project-card .project-image {
   background-color: #744B53;
-  max-width: 700px;
+  max-width: 800px;
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -401,14 +411,16 @@ nav ul a {
 }
 .project-card a {
   text-decoration: none;
-  color: #000;
+  color: #744B53;
+  font-style: italic;
 }
 .project-card h2,
 .project-card p {
   margin: 10px 0;
-  color: #000;
+  color: #333;
 }
-.project-card h2, .project-card a, .project-card p {
+.project-card h2,
+.project-card p {
   font-weight: 300;
 }
 
@@ -418,6 +430,8 @@ nav ul a {
 .night .project-card .project-image {
   background-color: #9CA7A0;
 }
+.night .project-card h2,
+.night .project-card p,
 .night .project-card a {
   color: #fff;
 }
@@ -426,6 +440,7 @@ body {
   font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
+  line-height: 1.6;
 }
 
 .app {

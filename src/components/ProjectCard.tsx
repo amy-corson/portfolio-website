@@ -4,7 +4,7 @@ type Project = {
   url: string;
   title: string;
   tags?: string[];
-  caseStudy?: boolean;
+  linkText?: string;
   image?: string;
   description?: string;
 };
@@ -22,9 +22,20 @@ const ProjectCard = ({ project }: { project: Project }) => {
       </div>
       <h2>{project.title}</h2>
       <p>{project.description}</p>
-      <Link to={project.url} className="project-link">
-        {project.caseStudy ? "Read more ->" : "View on Github ->"}
-      </Link>
+      {project.url.startsWith("/") ? (
+        <Link to={project.url} className="project-link">
+          {project.linkText}
+        </Link>
+      ) : (
+        <a
+          href={project.url}
+          className="project-link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          {project.linkText}
+        </a>
+      )}
     </div>
   );
 };
