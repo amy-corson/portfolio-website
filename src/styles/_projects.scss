@@ -1,41 +1,68 @@
 @use "colors";
 
-hr {
-    border-color: colors.$day-200;
-    border-style: solid;
-}
+.city.projects-page,
+.city.advanced-settings-page,
+.city.about-page {
+    background-color: colors.$day-50;
 
-.night hr {
-    border-color: #ffffff90;
-}
-
-.project-card {
-    margin: 3em 0;
-    .project-tags {
-        margin-top: 10px;
-        display: flex;
-        gap: 5px;
-        flex-wrap: wrap;
-
-        .project-tag {
-            border: 1px solid colors.$day-300;
-            padding: 5px 12px;
-            font-weight: 300;
-        }
+    .skyline {
+        fill: colors.$day-100;
     }
+
+    .house-base {
+        background: colors.$day-100;
+    }
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5em;
+    width: 100%;
+    margin: 2em 0;
+
+    h3 {
+        margin: 0.5em 0 0.1em;
+        font-weight: 500;
+    }
+}
+.big {
+    grid-column: 1 / span 2;
+}
+.project-card {
+    text-decoration: none;
+    color: colors.$day-300;
+
     .project-image {
-        background-color: colors.$day-300;
-        max-width: 800px;
+        transition: all 150ms ease;
+        background-color: colors.$day-250;
         padding: 20px;
+        padding-bottom: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+        > * {
+            transition: all 150ms ease;
+        }
+
+        .card-text {
+            position: absolute;
+            top: 50%;
+            background: colors.$day-50;
+            color: colors.$day-300;
+            padding: 6px;
+            width: 75%;
+            opacity: 0%;
+            text-align: center;
+        }
 
         &:after {
             content: "";
             position: absolute;
-            border: 3px solid #fff;
+            border: 3px solid colors.$day-50;
             top: 10px;
             left: 10px;
             bottom: 10px;
@@ -43,30 +70,59 @@ hr {
         }
 
         img {
-            max-height: 200px;
+            max-height: 290px;
             width: 90%;
             object-fit: contain;
         }
+
+        &:hover {
+            box-shadow: rgba(0, 0, 0, 0.35) 1.95px 1.95px 2.6px;
+
+            .card-text {
+                opacity: 100%;
+            }
+
+            > * {
+                transition: all 150ms ease;
+            }
+            img {
+                filter: blur(5px);
+                transform: scale(1.06);
+            }
+        }
     }
 
-    a {
-        text-decoration: none;
+    p {
+        margin: 5px 0;
         color: colors.$day-300;
-        font-style: italic;
-    }
-
-    h2,
-    p {
-        margin: 10px 0;
-        color: #333;
-    }
-
-    h2,
-    p {
         font-weight: 300;
     }
 }
 
+.city.night.projects-page,
+.city.night.about-page {
+    background-color: colors.$night-250;
+
+        .skyline {
+        fill: colors.$night-300;
+    }
+
+    h1 {
+        border-bottom: 2px solid #fff;
+    }
+}
+
+.night.city.advanced-settings-page {
+    background-color: colors.$night-250;
+
+    .skyline {
+        fill: colors.$night-300;
+    }
+
+    .house-base {
+        background: colors.$night-300;
+    }
+}
 .night .project-card {
     .project-tags .project-tag {
         border: 1px solid #fff;
@@ -74,11 +130,31 @@ hr {
 
     .project-image {
         background-color: colors.$night-100;
+
+        &:after {
+            border: 3px solid #fff;
+        }
     }
 
     h2,
+    h3,
     p,
     a {
         color: #fff;
+    }
+
+    .card-text {
+        background: colors.$night-300;
+        color: #fff;
+    }
+}
+
+@media (max-width: 700px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .big {
+        grid-column: 1;
     }
 }

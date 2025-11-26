@@ -9,9 +9,12 @@ import { Skyline } from "./assets/city/Skyline";
 function App() {
   const [isNight, setIsNight] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const path = useLocation().pathname.replace("/", "");
-  const page = path ? path : "home";
-  window.onresize = () => {};
+  const path = useLocation().pathname;
+  const slashIndex = path.lastIndexOf("/");
+  const smallPath = path.substring(slashIndex + 1);
+  const page = smallPath ? smallPath : "home";
+
+  const { advancedSettings } = ROUTES.projects.subProjects;
   return (
     <div className={`city ${isNight ? "night" : ""} ${page}-page`}>
       <Ribbon
@@ -28,8 +31,8 @@ function App() {
           <Route path={ROUTES.projects.url}>
             <Route index element={ROUTES.projects.component} />
             <Route
-              path="advanced-settings"
-              element={<div>this is advancedsettings</div>}
+              path={advancedSettings.url}
+              element={advancedSettings.component}
             />
           </Route>
         </Routes>

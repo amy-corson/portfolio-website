@@ -184,14 +184,14 @@ svg.train-car .train {
   top: 35px;
   z-index: 1;
   min-height: 300px;
-  fill: #e7d6d2;
+  fill: #e9d0ca;
 }
 .city .house-base {
   position: relative;
-  margin-top: -100px;
+  margin-top: -125px;
   width: 100%;
   bottom: 0;
-  background-color: #e7d6d2;
+  background-color: #F3EBE3;
 }
 .city .house-container {
   display: flex;
@@ -355,73 +355,134 @@ nav ul a {
 .page-container {
   position: relative;
   width: 85%;
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
   z-index: 5;
   color: #744B53;
-  padding-bottom: 20px;
+  padding-bottom: 5em;
+}
+.page-container h1 {
+  margin-bottom: 0.5em;
+}
+.page-container h2 {
+  width: 100%;
 }
 
-hr {
-  border-color: #c7aba8;
-  border-style: solid;
+.city.projects-page,
+.city.advanced-settings-page,
+.city.about-page {
+  background-color: #F3EBE3;
+}
+.city.projects-page .skyline,
+.city.advanced-settings-page .skyline,
+.city.about-page .skyline {
+  fill: #e9d0ca;
+}
+.city.projects-page .house-base,
+.city.advanced-settings-page .house-base,
+.city.about-page .house-base {
+  background: #e9d0ca;
 }
 
-.night hr {
-  border-color: rgba(255, 255, 255, 0.5647058824);
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+  width: 100%;
+  margin: 2em 0;
+}
+.projects h3 {
+  margin: 0.5em 0 0.1em;
+  font-weight: 500;
+}
+
+.big {
+  grid-column: 1/span 2;
 }
 
 .project-card {
-  margin: 3em 0;
-}
-.project-card .project-tags {
-  margin-top: 10px;
-  display: flex;
-  gap: 5px;
-  flex-wrap: wrap;
-}
-.project-card .project-tags .project-tag {
-  border: 1px solid #744B53;
-  padding: 5px 12px;
-  font-weight: 300;
+  text-decoration: none;
+  color: #744B53;
 }
 .project-card .project-image {
-  background-color: #744B53;
-  max-width: 800px;
+  transition: all 150ms ease;
+  background-color: #B39390;
   padding: 20px;
+  padding-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.project-card .project-image > * {
+  transition: all 150ms ease;
+}
+.project-card .project-image .card-text {
+  position: absolute;
+  top: 50%;
+  background: #F3EBE3;
+  color: #744B53;
+  padding: 6px;
+  width: 75%;
+  opacity: 0%;
+  text-align: center;
 }
 .project-card .project-image:after {
   content: "";
   position: absolute;
-  border: 3px solid #fff;
+  border: 3px solid #F3EBE3;
   top: 10px;
   left: 10px;
   bottom: 10px;
   right: 10px;
 }
 .project-card .project-image img {
-  max-height: 200px;
+  max-height: 290px;
   width: 90%;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.project-card a {
-  text-decoration: none;
+.project-card .project-image:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 1.95px 1.95px 2.6px;
+}
+.project-card .project-image:hover .card-text {
+  opacity: 100%;
+}
+.project-card .project-image:hover > * {
+  transition: all 150ms ease;
+}
+.project-card .project-image:hover img {
+  filter: blur(5px);
+  transform: scale(1.06);
+}
+.project-card p {
+  margin: 5px 0;
   color: #744B53;
-  font-style: italic;
-}
-.project-card h2,
-.project-card p {
-  margin: 10px 0;
-  color: #333;
-}
-.project-card h2,
-.project-card p {
   font-weight: 300;
+}
+
+.city.night.projects-page,
+.city.night.about-page {
+  background-color: #6d7f76;
+}
+.city.night.projects-page .skyline,
+.city.night.about-page .skyline {
+  fill: #4E6255;
+}
+.city.night.projects-page h1,
+.city.night.about-page h1 {
+  border-bottom: 2px solid #fff;
+}
+
+.night.city.advanced-settings-page {
+  background-color: #6d7f76;
+}
+.night.city.advanced-settings-page .skyline {
+  fill: #4E6255;
+}
+.night.city.advanced-settings-page .house-base {
+  background: #4E6255;
 }
 
 .night .project-card .project-tags .project-tag {
@@ -430,10 +491,70 @@ hr {
 .night .project-card .project-image {
   background-color: #9CA7A0;
 }
+.night .project-card .project-image:after {
+  border: 3px solid #fff;
+}
 .night .project-card h2,
+.night .project-card h3,
 .night .project-card p,
 .night .project-card a {
   color: #fff;
+}
+.night .project-card .card-text {
+  background: #4E6255;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+  .big {
+    grid-column: 1;
+  }
+}
+.case-study .img-hero {
+  margin-bottom: 2em;
+}
+.case-study .img-hero img {
+  height: 300px;
+}
+.case-study .img-hero img.mobile-img {
+  height: 200px;
+}
+.case-study h1 {
+  font-weight: 300;
+  margin-bottom: 1.5em;
+}
+.case-study h1 span.subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  display: flex;
+  margin-bottom: -5px;
+}
+.case-study .details {
+  width: 85%;
+  display: grid;
+  grid-template-columns: 1fr 3px 1fr 3px 0.7fr;
+  gap: 1.5em;
+  justify-items: center;
+  margin: 0 auto;
+}
+.case-study .details div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.case-study .details div ul {
+  margin: 0;
+  padding-left: 1em;
+}
+.case-study .border {
+  align-self: center;
+  justify-self: center;
+  width: 1px;
+  background: black;
+  height: 70%;
 }
 
 body {
@@ -441,6 +562,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  font-weight: 300;
 }
 
 .app {
@@ -450,6 +572,6 @@ body {
   z-index: 0;
 }
 
-h1, h2 {
+h1, h2, h3, .header {
   font-family: "Hedvig Letters Serif", serif;
 }

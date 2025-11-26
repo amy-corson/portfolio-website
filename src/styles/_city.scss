@@ -1,5 +1,7 @@
 @use "colors";
 
+// #e7d6d2
+
 .city {
   position: relative;
   top: 0;
@@ -166,15 +168,15 @@ svg.train-car {
     top: 35px;
     z-index: 1;
     min-height: 300px;
-    fill: #e7d6d2;
+    fill: colors.$day-100;
   }
 
   .house-base {
     position: relative;
-    margin-top: -100px;
+    margin-top: -125px;
     width: 100%;
     bottom: 0;
-    background-color: #e7d6d2;
+    background-color: colors.$day-50
   }
 
   .house-container {

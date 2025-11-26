@@ -3,6 +3,7 @@
 @forward "nav";
 @forward "page-container";
 @forward "projects";
+@forward "case-study";
 @use "colors";
 
 body {
@@ -10,6 +11,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    font-weight: 300;
 }
 
 .app {
@@ -19,7 +21,7 @@ body {
     }
 }
 
-h1, h2 {
+h1, h2, h3, .header {
     font-family: "Hedvig Letters Serif", serif;
 }
 
