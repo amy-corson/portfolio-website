@@ -2,6 +2,9 @@
 @use "sass:color";
 
 .case-study {
+    > * {
+        transition: all 250ms ease;
+    }
     a {
         color: colors.$day-300;
     }
@@ -180,6 +183,9 @@
 }
 
 .night .case-study {
+    > * {
+        transition: all 250ms ease;
+    }
     a {
         color: #fff;
     }

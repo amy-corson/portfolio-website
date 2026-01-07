@@ -41,14 +41,14 @@ const Ribbon: React.FC<RibbonProps> = ({
           },
         }}
       >
-        <div className="drawer-container">
+        <div className={`drawer-container ${isNight ? "night" : "" }`}>
           <button
             onClick={() => setDrawerOpen(false)}
             className="close-drawer-button"
           >
             <CloseIcon />
           </button>
-          <Nav />
+          <Nav closeDrawer={() => setDrawerOpen(false)}/>
         </div>
       </Drawer>
     </div>

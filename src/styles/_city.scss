@@ -1,12 +1,17 @@
 @use "colors";
 
 .city {
+    transition: all 250ms ease;
     background-color: colors.$day-50;
     overflow-x: hidden;
     position: relative;
     top: 0;
     width: 100%;
     z-index: 0;
+
+    > * {
+        transition: all 250ms ease;
+    }
 
     // Border
     &:before {
@@ -86,6 +91,11 @@
     }
 
     svg {
+        .accents,
+        .house,
+        .windows {
+            transition: all 250ms ease;
+        }
         .accents {
             fill: colors.$day-250;
         }
@@ -126,7 +136,12 @@
 }
 
 .city.night {
+    transition: all 250ms ease;
     background-color: colors.$night-250;
+
+    > * {
+        transition: all 250ms ease;
+    }
 
     &:before {
         border-color: #fff;
@@ -171,6 +186,11 @@
     }
 
     svg {
+        .accents,
+        .house,
+        .windows {
+            transition: all 250ms ease;
+        }
         .accents {
             fill: colors.$night-250;
         }

@@ -6,14 +6,16 @@ import ExternalSocialLinks from "./ExternalLinks";
 import ExternalLinkWithIcon from "../util/ExternalLinkWithIcon";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-interface NavBarProps {}
+interface NavBarProps {
+  closeDrawer?: () => void
+}
 
-const Nav: React.FC<NavBarProps> = () => {
+const Nav: React.FC<NavBarProps> = ({closeDrawer}) => {
   return (
     <nav>
       <ul className="internal-links">
         {Object.values(ROUTES).map((route) => (
-          <li key={route.name}>
+          <li key={route.name} onClick={closeDrawer}>
             <Link to={route.url}>{route.name}</Link>
           </li>
         ))}

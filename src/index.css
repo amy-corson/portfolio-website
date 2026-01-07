@@ -1,3 +1,6 @@
+.case-study > * {
+  transition: all 250ms ease;
+}
 .case-study a {
   color: #744B53;
 }
@@ -146,6 +149,9 @@
   font-weight: 600;
 }
 
+.night .case-study > * {
+  transition: all 250ms ease;
+}
 .night .case-study a {
   color: #fff;
 }
@@ -214,12 +220,16 @@
   }
 }
 .city {
+  transition: all 250ms ease;
   background-color: #F3EBE3;
   overflow-x: hidden;
   position: relative;
   top: 0;
   width: 100%;
   z-index: 0;
+}
+.city > * {
+  transition: all 250ms ease;
 }
 .city:before {
   border: 5px solid #744B53;
@@ -288,6 +298,11 @@
   width: 300px;
   z-index: 5;
 }
+.city svg .accents,
+.city svg .house,
+.city svg .windows {
+  transition: all 250ms ease;
+}
 .city svg .accents {
   fill: #B39390;
 }
@@ -320,7 +335,11 @@
 }
 
 .city.night {
+  transition: all 250ms ease;
   background-color: #6d7f76;
+}
+.city.night > * {
+  transition: all 250ms ease;
 }
 .city.night:before {
   border-color: #fff;
@@ -353,6 +372,11 @@
 }
 .city.night .train-car .windows {
   fill: #DBDEDC;
+}
+.city.night svg .accents,
+.city.night svg .house,
+.city.night svg .windows {
+  transition: all 250ms ease;
 }
 .city.night svg .accents {
   fill: #6d7f76;
@@ -404,6 +428,7 @@ svg.train-car .windows {
   left: 20%;
   position: fixed;
   top: 35%;
+  transition: color 250ms ease;
 }
 .home h1 {
   font-size: 80px;
@@ -420,6 +445,7 @@ svg.train-car .windows {
 
 .night .home {
   color: #fff;
+  transition: color 250ms ease;
 }
 
 @media (max-width: 700px) {
@@ -469,6 +495,11 @@ nav ul a {
   color: inherit;
   font-weight: 300;
   text-decoration: none;
+  opacity: 100%;
+}
+.external-links a:hover,
+nav ul a:hover {
+  opacity: 85%;
 }
 
 .nav-ribbon {
@@ -490,6 +521,7 @@ nav ul a {
   display: flex;
   height: 35px;
   position: relative;
+  transition: all 150ms ease;
   width: 70px;
   z-index: 20;
 }
@@ -504,6 +536,8 @@ nav ul a {
   height: 25px;
   left: 5px;
   position: absolute;
+  transition: transform 150ms ease;
+  transform: translateX(0);
   width: 25px;
 }
 .nav-ribbon .nav-drawer-toggle {
@@ -515,20 +549,18 @@ nav ul a {
 
 .night .nav-ribbon .day-night-toggle {
   background-color: #DBDEDC;
+  transition: all 150ms ease;
 }
 .night .nav-ribbon .day-night-toggle svg {
   color: #4E6255;
   padding: 0;
 }
 .night .nav-ribbon .day-night-toggle:before {
+  transition: all 150ms ease;
   background-color: #4E6255;
-  left: auto;
-  right: 5px;
+  transform: translateX(35px);
 }
 .night .nav-ribbon .nav-drawer-toggle {
-  color: #fff;
-}
-.night .nav-ribbon nav a {
   color: #fff;
 }
 
@@ -540,11 +572,13 @@ nav ul a {
   justify-content: center;
   position: relative;
   width: 100%;
+  text-align: center;
 }
 .drawer-container .close-drawer-button {
   background: transparent;
   border: none;
   color: #744B53;
+  cursor: pointer;
   position: absolute;
   right: 20px;
   top: 20px;
@@ -559,7 +593,11 @@ nav ul a {
   text-align: center;
 }
 
-.night .footer-block .external-links {
+.night.drawer-container nav ul, .night.drawer-container button {
+  color: #fff;
+}
+
+.footer-block .external-links {
   color: #fff;
 }
 
@@ -778,9 +816,11 @@ h2,
 }
 .external-link.icon-on-hover svg {
   opacity: 0;
+  transition: all 100ms ease;
 }
 .external-link.icon-on-hover:hover svg {
   opacity: 100%;
+  transition: all 100ms ease;
 }
 
 .invisible {
