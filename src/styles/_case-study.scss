@@ -1,6 +1,9 @@
 @use "colors";
 
 .case-study {
+    a {
+        color: colors.$day-300;
+    }
     .border {
         align-self: center;
         background: colors.$day-300;
@@ -8,6 +11,13 @@
         justify-self: center;
         width: 1px;
     }
+    .caption {
+            font-size: 12px;
+            justify-content: center;
+            margin: 0;
+            text-align: center;
+            width: 100%;
+        }
 
     .details {
         display: grid;
@@ -157,13 +167,6 @@
 
     p {
         margin-top: 0.5em;
-
-        &.caption {
-            font-size: 12px;
-            margin: 0;
-            text-align: center;
-            width: 100%;
-        }
     }
 
     section {
@@ -176,6 +179,9 @@
 }
 
 .night .case-study {
+    a {
+        color: #fff;
+    }
     .border {
         background: #fff;
     }

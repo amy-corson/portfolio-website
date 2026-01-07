@@ -32,3 +32,20 @@ h2,
 .header {
     font-family: "Hedvig Letters Serif", serif;
 }
+
+.external-link {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+
+    svg {
+        width: 16px;
+    }
+}
+
+.invisible {
+    clip: rect(0, 0, 0, 0);
+    height: 0;
+    overflow: hidden;
+    width: 0;
+}

@@ -7,6 +7,7 @@ import googleSettings from "../assets/case-study/research/google-settings.png";
 import metroTransitSettings from "../assets/case-study/research/metro-transit-settings.png";
 import STdesigns from "../assets/case-study/STdesigns.png";
 import figmaDesigns from "../assets/case-study/figmaDesigns.png";
+import ExternalLinkWithIcon from "../util/ExternalLinkWithIcon";
 
 const quotes = [
   "Not intuitive how to interact with the mode selector",
@@ -225,10 +226,29 @@ const AdvancedSettingsCase = () => {
           of the advanced settings page using custom CSS overrides that more
           closely matched the Sound Transit designs.
         </p>
-        <a href="">
+        <a href="https://www.figma.com/design/YcpqCA9isJphQWarS9FEVv/Trip-Plan?node-id=0-229&t=SiqFd7D4A0I6zjgG-1" target="_blank" rel="noopener noreferrer">
           <img src={figmaDesigns} className="fullscreen-design" />
-          <p className="caption">Click to see figma designs</p>
+          <ExternalLinkWithIcon url="https://www.figma.com/design/YcpqCA9isJphQWarS9FEVv/Trip-Plan?node-id=0-229&t=SiqFd7D4A0I6zjgG-1" string="Click to see figma designs" classNames="caption" />
         </a>
+        <h3>development</h3>
+        At this time, there were five developers on the team. Two of them helped write code for this project (although the majority of the commits and code were mine). The other two helped with PR review. Overall, this effort was approved by everyone on the dev team.
+        <p>Here’s where I created the advanced mode settings panel inside our custom component library:
+          <ExternalLinkWithIcon url="https://github.com/opentripplanner/otp-ui/pull/749" string="pull request" />
+        </p>
+        <p>Here’s where I imported that panel into our application, wrapped in a brand new Advanced Settings panel for the trip form:{" "}
+          <ExternalLinkWithIcon url="https://github.com/opentripplanner/otp-react-redux/pull/1249" string="pull request" />
+         </p>
+        <h3>challenges</h3>
+        <p><strong>Open source:</strong> The open source nature of the OTP project proved a unique challenge. We had to design something that not only worked for Sound Transit (the client) but also all of our clients.</p>
+        <p><strong>Team buy in:</strong> To be blunt, some of the challenges for this project were internal. Since our team does not have a dedicated UI/UX team, the developers on my team are very involved in designing UI components. To many of the people who worked intently on the previous version of the trip form (and who saw it as a marked improvment from previous iterations) it seemed like a waste of time to redesign the trip form. We had many long internal conversations about the benefits and drawbacks of the redesign, and thankfully by the end of the process everyone felt good about the changes.</p>
+        <p><strong>Incorporating feedback:</strong> At this time, our team had no agreed upon design process, and since the entire team was developers often design feedback would happen during the PR review process. Some people felt we wasted a lot of time in this project reviewing design details after code was already written, when we could have solidified the designs before we touched the code. Others felt the design process had been unclear and their opinions were being overlooked. Ultimately we went back to the designs and agreed on a set of new changes that everyone was happy with before resuming work on the code. These conversaions, while frustrating in the moment, led to a clearer agreed-upon design process for future projects.</p>
+      </section>
+      <section>
+        <h2>Conclusions</h2>
+        <h3>results</h3>
+        <p>The Sound Transit 6/2025 open beta found a <strong>ten point jump</strong> in System Usability Scale Score from the closed beta in 12/2023, with over 40% of respondents saying they were “very satisfied” with the trip planning and a total of 75% of respondents reporting overall satisfaction with trip planning. We also saw anecdotally a few of our other transit agency clients expressing satisfaction with the changes and passing along approval from their users.</p>
+        <h3>takeaways</h3>
+        <p>It’s hard to update a legacy application. It means overhauling old processes, consulting with users, and admitting past mistakes. However the results of committing to these steps speak for themselves. I learned a lot about the effectiveness of having a design methodology, and that led us to continuing to apply new designs to other parts of the UI.  At the conclusion of this project I was proud to work on a team that cared deeply enough to argue and challenge one another’s perspectives. I think it led to a stronger product for our end users, and a stronger foundation for our team.</p>
       </section>
     </div>
   );
