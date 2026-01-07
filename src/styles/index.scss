@@ -89,3 +89,17 @@ h2,
 .night .footer-block {
     color: #fff;
 }
+
+@media (max-width: 650px) {
+    h1 {
+       font-size: 40px; 
+    }
+    
+}
+
+@media (max-width: 450px) {
+    body {
+      font-size: 18px;  
+    }
+    
+}

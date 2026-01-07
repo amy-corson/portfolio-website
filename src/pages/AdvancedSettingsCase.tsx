@@ -165,7 +165,7 @@ const AdvancedSettingsCase = () => {
           <p>
             Our application deviated from the norm. It was becoming clear that
             as a team without a dedicated UX researcher, we lacked the resources
-            to break the mold.{" "}
+            to break the mold.
             <strong>
               If we didn’t have the ability to thoroughly test a UX approach
               that users were unfamiliar with, then we owed it to our users to
@@ -246,7 +246,7 @@ const AdvancedSettingsCase = () => {
           Overall, this effort was approved by everyone on the dev team.
           <p>
             Here’s where I created the advanced mode settings panel inside our
-            custom component library:
+            custom component library:{" "}
             <ExternalLinkWithIcon
               url="https://github.com/opentripplanner/otp-ui/pull/749"
               string="view on github"
@@ -297,8 +297,8 @@ const AdvancedSettingsCase = () => {
           <h2>Conclusions</h2>
           <h3>results</h3>
           <p>
-            The Sound Transit 6/2025 open beta found a{" "}
-            <strong>ten point jump</strong> in System Usability Scale Score from
+            The June 2025 Sound Transit open beta found a{" "}
+            <strong>ten point jump in System Usability Scale Score</strong> from
             the closed beta in 12/2023, with over 40% of respondents saying they
             were “very satisfied” with the trip planning and a total of 75% of
             respondents reporting overall satisfaction with trip planning. We

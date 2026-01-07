@@ -1,4 +1,3 @@
-import ExternalLinkWithIcon from "../util/ExternalLinkWithIcon"
 import ExternalSocialLinks from "./ExternalLinks"
 
 const Footer = () => {
