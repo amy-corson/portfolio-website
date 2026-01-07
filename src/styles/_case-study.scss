@@ -1,52 +1,186 @@
+@use "colors";
+
 .case-study {
+    .border {
+        align-self: center;
+        background: colors.$day-300;
+        height: 70%;
+        justify-self: center;
+        width: 1px;
+    }
+
+    .details {
+        display: grid;
+        gap: 1.5em;
+        grid-template-columns: 1fr 3px 1fr 3px 0.7fr;
+        justify-items: center;
+        margin: 4em auto;
+        width: 90%;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            ul {
+                margin: 0;
+                padding-left: 1em;
+            }
+        }
+    }
+
+    .fullscreen-design {
+        width: 100%;
+    }
+
     .img-hero {
-        margin-bottom: 2em;
+        align-items: baseline;
+        display: flex;
+        justify-content: center;
+        margin: 4em;
+        margin-left: -10px;
+
         img {
             height: 300px;
+
             &.mobile-img {
                 height: 200px;
             }
         }
     }
 
-    h1 {
-        font-weight: 300;
-        margin-bottom: 1.5em;
-        span.subtitle {
-            font-family: "Inter", sans-serif;
-            font-size: 16px;
-            display: flex;
-            margin-bottom: -5px;
+    .overview {
+        font-style: italic;
+        margin-top: 0;
+    }
+
+    .problem-statement {
+        align-items: center;
+        display: flex;
+        gap: 3em;
+        justify-content: space-between;
+
+        .design-gif {
+            img {
+                border: 3px solid #fff;
+                box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+                max-height: 300px;
+                max-width: 100%;
+            }
+        }
+
+        p.statement-block {
+            margin: 0;
+            width: 65%;
         }
     }
 
-    .details {
-        width: 85%;
+    .quote-block {
+        background-color: colors.$day-300;
+        color: #fff;
+        padding: 1.5em;
+        position: relative;
+
+        &:after {
+            border: 2px solid colors.$day-50;
+            bottom: 4px;
+            content: "";
+            left: 4px;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+    }
+
+    .quote-container {
         display: grid;
-        grid-template-columns: 1fr 3px 1fr 3px .70fr;
-        gap: 1.5em;
-        justify-items: center;
-        margin: 0 auto;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        margin-bottom: 10px;
+    }
+
+    .quotes {
+        margin: 2em 0;
+    }
+
+    .research-block {
+        background: colors.$day-300;
+        color: #fff;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        padding: 1.25em 2em;
+        position: relative;
+
+        &:after {
+            border: 2px solid colors.$day-50;
+            bottom: 4px;
+            content: "";
+            left: 4px;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
 
         div {
-            display: flex; 
-            flex-direction: column;
-            gap: 5px;
+            align-self: center;
+            justify-self: center;
 
-            ul {
-            margin: 0;
-            padding-left: 1em;
+            img {
+                box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+                max-height: 250px;
+                max-width: 100%;
+            }
         }
-        }
-
-        
     }
 
+    h1 {
+        font-weight: 300;
+
+        span.subtitle {
+            display: flex;
+            font-family: "Inter", sans-serif;
+            font-size: 16px;
+            margin-bottom: -15px;
+        }
+    }
+
+    h2 {
+        border-bottom: 1px solid colors.$day-300;
+    }
+
+    h3 {
+        font-style: italic;
+        font-weight: 500;
+        margin-bottom: 0.5em;
+    }
+
+    p {
+        margin-top: 0.5em;
+
+        &.caption {
+            font-size: 12px;
+            margin: 0;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    section {
+        margin: 3em 0;
+    }
+
+    strong {
+        font-weight: 600;
+    }
+}
+
+.night .case-study {
     .border {
-        align-self: center;
-        justify-self: center;
-        width: 1px;
-        background: black;
-        height: 70%;
+        background: #fff;
+    }
+
+    h2 {
+        border-bottom: solid 1px #fff;
     }
 }

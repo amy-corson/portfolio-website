@@ -1,229 +1,228 @@
 @use "colors";
 
-// #e7d6d2
-
 .city {
-  position: relative;
-  top: 0;
-  width: 100%;
-  z-index: 0;
-  background-color: colors.$day-50;
-  overflow-x: hidden;
+    background-color: colors.$day-50;
+    overflow-x: hidden;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 0;
 
-  // Border
-  &:before {
-    content: "";
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    bottom: 10px;
-    right: 10px;
-    border: 5px solid colors.$day-300;
-    z-index: 2;
-    // background: linear-gradient(to top, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  }
-
-  .moon {
-    display: none;
-  }
-
-  .sun {
-    width: 150px;
-    height: 150px;
-    border-radius: 100px;
-    position: absolute;
-    top: 15%;
-    right: 20%;
-    background: rgba(255, 255, 255, 0.3);
-    z-index: 9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    & > div {
-      width: 75px;
-      height: 75px;
-      background: white;
-      border-radius: 50px;
-      opacity: 100%;
-      z-index: 1000;
+    // Border
+    &:before {
+        border: 5px solid colors.$day-300;
+        bottom: 10px;
+        content: "";
+        left: 10px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 2;
     }
-  }
+
+    .house-base {
+        background-color: colors.$day-25;
+        bottom: 0;
+        margin-top: -125px;
+        position: relative;
+        width: 100%;
+    }
+
+    .house-container {
+        bottom: 50px;
+        display: flex;
+        gap: 0;
+        z-index: 10;
+    }
+
+    .moon {
+        display: none;
+    }
+
+    .rail-container {
+        bottom: 55px;
+        display: flex;
+        fill: colors.$day-300;
+        gap: 0;
+        z-index: 5;
+    }
+
+    .skyline {
+        fill: colors.$day-100;
+        min-height: 300px;
+        position: relative;
+        top: 35px;
+        z-index: 1;
+    }
+
+    .sun {
+        align-items: center;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 100px;
+        display: flex;
+        height: 150px;
+        justify-content: center;
+        position: absolute;
+        right: 20%;
+        top: 15%;
+        width: 150px;
+        z-index: 9;
+
+        & > div {
+            background: white;
+            border-radius: 50px;
+            height: 75px;
+            opacity: 100%;
+            width: 75px;
+            z-index: 1000;
+        }
+    }
+
+    .train-cars {
+        bottom: 130px;
+        display: flex;
+        width: 300px;
+        z-index: 5;
+    }
+
+    svg {
+        .accents {
+            fill: colors.$day-250;
+        }
+
+        .house {
+            fill: colors.$day-200;
+        }
+
+        .windows {
+            fill: colors.$day-100;
+        }
+    }
+
+    &.home-page {
+        height: 100vh;
+        overflow: hidden;
+
+        > * {
+            position: absolute;
+        }
+
+        .house-base {
+            background-color: colors.$day-200;
+            bottom: 0;
+            height: 60px;
+            position: absolute;
+            top: auto;
+            width: 100%;
+            z-index: 11;
+        }
+
+        .skyline {
+            bottom: 0;
+            position: absolute;
+            top: auto;
+        }
+    }
 }
 
 .city.night {
-  background-color: colors.$night-250;
+    background-color: colors.$night-250;
 
-  .sun {
-    // FIX ME: Animate this out of the way on transition
-    display: none;
-  }
+    &:before {
+        border-color: #fff;
+    }
 
-  .moon {
-    display: block;
-    position: absolute;
-    top: 17%;
-    right: 22%;
-    color: white;
-    width: 100px;
-    height: 100px;
-    opacity: 90%;
-    transform: rotateY(180deg) rotate(25deg);
-  }
-
-  &:before {
-    border-color: #fff;
-  }
-
-  &.home-page {
-    background-color: colors.$night-300;
     .house-base {
-      background-color: colors.$night-200;
+        background-color: colors.$night-300;
     }
+
+    .moon {
+        color: white;
+        display: block;
+        height: 100px;
+        opacity: 90%;
+        position: absolute;
+        right: 22%;
+        top: 17%;
+        transform: rotateY(180deg) rotate(25deg);
+        width: 100px;
+    }
+
+    .rail-container {
+        fill: colors.$night-300;
+    }
+
     .skyline {
-      fill: colors.$night-100;
-    }
-  }
-
-  .house-base {
-    background-color: colors.$night-300;
-  }
-
-  svg {
-    .windows {
-      fill: colors.$night-50;
+        fill: colors.$night-300;
     }
 
-    .accents {
-      fill: colors.$night-250;
+    .sun {
+        display: none;
     }
 
-    .house {
-      fill: colors.$night-200;
-    }
-  }
+    .train-car {
+        .train {
+            fill: colors.$night-300;
+        }
 
-  .skyline {
-    fill: colors.$night-300;
-  }
-  .rail-container {
-    fill: colors.$night-300;
-  }
-  .train-car {
-    .windows {
-      fill: colors.$night-50;
+        .windows {
+            fill: colors.$night-50;
+        }
     }
-    .train {
-      fill: colors.$night-300;
+
+    svg {
+        .accents {
+            fill: colors.$night-250;
+        }
+
+        .house {
+            fill: colors.$night-200;
+        }
+
+        .windows {
+            fill: colors.$night-50;
+        }
     }
-  }
-}
 
-svg.rail {
-  height: 75px;
-}
+    &.home-page {
+        background-color: colors.$night-300;
 
-svg.train-car {
-  .windows {
-    color: colors.$day-50;
-  }
-  .train {
-    color: colors.$day-300;
-  }
+        .house-base {
+            background-color: colors.$night-200;
+        }
+
+        .skyline {
+            fill: colors.$night-100;
+        }
+    }
 }
 
 .houses {
-  height: 100px;
-  // Width here is 659
+    height: 100px;
 }
 
-.city {
-  &.home-page {
-    overflow: hidden;
-    height: 100vh;
+svg.rail {
+    height: 75px;
+}
 
-    > * {
-      position: absolute;
+svg.train-car {
+    .train {
+        color: colors.$day-300;
     }
 
-    .skyline {
-      position: absolute;
-      top: auto;
-      bottom: 0;
-    }
-
-    .house-base {
-      position: absolute;
-      top: auto;
-      height: 60px;
-      width: 100%;
-      bottom: 0;
-      z-index: 11;
-      background-color: colors.$day-200;
-    }
-  }
-
-  .skyline {
-    position: relative;
-    top: 35px;
-    z-index: 1;
-    min-height: 300px;
-    fill: colors.$day-100;
-  }
-
-  .house-base {
-    position: relative;
-    margin-top: -125px;
-    width: 100%;
-    bottom: 0;
-    background-color: colors.$day-50
-  }
-
-  .house-container {
-    display: flex;
-    gap: 0;
-    bottom: 50px;
-    z-index: 10;
-  }
-
-  svg {
     .windows {
-      fill: colors.$day-100;
+        color: colors.$day-50;
     }
-
-    .accents {
-      fill: colors.$day-250;
-    }
-
-    .house {
-      fill: colors.$day-200;
-    }
-  }
-
-  .rail-container {
-    display: flex;
-    gap: 0;
-    bottom: 55px;
-    z-index: 5;
-    fill: colors.$day-300;
-  }
-
-  .train-cars {
-    display: flex;
-    width: 300px;
-    bottom: 130px;
-    z-index: 5;
-  }
 }
 
 @media (max-width: 1000px) {
-  .city .sun {
-    width: 100px;
-    height: 100px;
+    .city .sun {
+        height: 100px;
+        width: 100px;
 
-    & > div {
-      width: 50px;
-      height: 50px;
+        & > div {
+            height: 50px;
+            width: 50px;
+        }
     }
-  }
 }

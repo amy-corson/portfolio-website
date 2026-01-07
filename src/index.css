@@ -191,7 +191,7 @@ svg.train-car .train {
   margin-top: -125px;
   width: 100%;
   bottom: 0;
-  background-color: #F3EBE3;
+  background-color: #fffdfb;
 }
 .city .house-container {
   display: flex;
@@ -362,7 +362,7 @@ nav ul a {
   padding-bottom: 5em;
 }
 .page-container h1 {
-  margin-bottom: 0.5em;
+  margin-bottom: 0em;
 }
 .page-container h2 {
   width: 100%;
@@ -371,17 +371,22 @@ nav ul a {
 .city.projects-page,
 .city.advanced-settings-page,
 .city.about-page {
-  background-color: #F3EBE3;
+  background-color: #e9d0ca;
 }
 .city.projects-page .skyline,
 .city.advanced-settings-page .skyline,
 .city.about-page .skyline {
-  fill: #e9d0ca;
+  fill: #fffdfb;
 }
 .city.projects-page .house-base,
 .city.advanced-settings-page .house-base,
 .city.about-page .house-base {
-  background: #e9d0ca;
+  background: #fffdfb;
+}
+.city.projects-page h1,
+.city.advanced-settings-page h1,
+.city.about-page h1 {
+  margin-top: 0;
 }
 
 .projects {
@@ -392,8 +397,14 @@ nav ul a {
   margin: 2em 0;
 }
 .projects h3 {
-  margin: 0.5em 0 0.1em;
-  font-weight: 500;
+  margin: 0 0 0.1em;
+  font-weight: 300;
+  text-align: center;
+}
+.projects .projects-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .big {
@@ -419,6 +430,8 @@ nav ul a {
   transition: all 150ms ease;
 }
 .project-card .project-image .card-text {
+  font-family: "Hedvig Letters Serif", serif;
+  text-transform: lowercase;
   position: absolute;
   top: 50%;
   background: #F3EBE3;
@@ -463,25 +476,18 @@ nav ul a {
 }
 
 .city.night.projects-page,
-.city.night.about-page {
+.city.night.about-page,
+.city.night.advanced-settings-page {
   background-color: #6d7f76;
 }
 .city.night.projects-page .skyline,
-.city.night.about-page .skyline {
+.city.night.about-page .skyline,
+.city.night.advanced-settings-page .skyline {
   fill: #4E6255;
 }
-.city.night.projects-page h1,
-.city.night.about-page h1 {
-  border-bottom: 2px solid #fff;
-}
-
-.night.city.advanced-settings-page {
-  background-color: #6d7f76;
-}
-.night.city.advanced-settings-page .skyline {
-  fill: #4E6255;
-}
-.night.city.advanced-settings-page .house-base {
+.city.night.projects-page .house-base,
+.city.night.about-page .house-base,
+.city.night.advanced-settings-page .house-base {
   background: #4E6255;
 }
 
@@ -514,7 +520,11 @@ nav ul a {
   }
 }
 .case-study .img-hero {
-  margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin: 4em;
+  margin-left: -10px;
 }
 .case-study .img-hero img {
   height: 300px;
@@ -524,21 +534,114 @@ nav ul a {
 }
 .case-study h1 {
   font-weight: 300;
-  margin-bottom: 1.5em;
 }
 .case-study h1 span.subtitle {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   display: flex;
-  margin-bottom: -5px;
+  margin-bottom: -15px;
+}
+.case-study .fullscreen-design {
+  width: 100%;
+}
+.case-study strong {
+  font-weight: 600;
+}
+.case-study h2 {
+  border-bottom: 1px solid #744B53;
+}
+.case-study h3 {
+  margin-bottom: 0.5em;
+  font-weight: 500;
+  font-style: italic;
+}
+.case-study p {
+  margin-top: 0.5em;
+}
+.case-study .overview {
+  margin-top: 0;
+  font-style: italic;
+}
+.case-study p.caption {
+  margin: 0;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+}
+.case-study .problem-statement {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+  justify-content: space-between;
+}
+.case-study .problem-statement p.statement-block {
+  width: 65%;
+  margin: 0;
+}
+.case-study .problem-statement .design-gif img {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  max-width: 100%;
+  border: 3px solid #fff;
+  max-height: 300px;
+}
+.case-study .quotes {
+  margin: 2em 0;
+}
+.case-study .quote-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.case-study .quote-block {
+  background-color: #744B53;
+  color: #fff;
+  padding: 1.5em;
+  position: relative;
+}
+.case-study .quote-block:after {
+  content: "";
+  position: absolute;
+  border: 2px solid #F3EBE3;
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  right: 4px;
+}
+.case-study .research-block {
+  padding: 1.25em 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  background: #744B53;
+  position: relative;
+  color: #fff;
+}
+.case-study .research-block:after {
+  content: "";
+  position: absolute;
+  border: 2px solid #F3EBE3;
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  right: 4px;
+}
+.case-study .research-block div {
+  align-self: center;
+  justify-self: center;
+}
+.case-study .research-block div img {
+  max-height: 250px;
+  max-width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .case-study .details {
-  width: 85%;
+  width: 90%;
   display: grid;
   grid-template-columns: 1fr 3px 1fr 3px 0.7fr;
   gap: 1.5em;
   justify-items: center;
-  margin: 0 auto;
+  margin: 4em auto;
 }
 .case-study .details div {
   display: flex;
@@ -553,8 +656,18 @@ nav ul a {
   align-self: center;
   justify-self: center;
   width: 1px;
-  background: black;
+  background: #744B53;
   height: 70%;
+}
+.case-study section {
+  margin: 3em 0;
+}
+
+.night .case-study h2 {
+  border-bottom: solid 1px #fff;
+}
+.night .case-study .border {
+  background: #fff;
 }
 
 body {
@@ -572,6 +685,11 @@ body {
   z-index: 0;
 }
 
-h1, h2, h3, .header {
+h1 {
+  font-size: 60px;
+  font-weight: 200;
+}
+
+h1, h2, .header {
   font-family: "Hedvig Letters Serif", serif;
 }

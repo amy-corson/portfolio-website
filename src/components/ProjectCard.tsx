@@ -23,7 +23,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <img src={project.image} />
         <div className="card-text">{project.linkText}</div>
       </div>
-      <h3>{project.title.toLowerCase()}</h3>
+      <h3>{project.title}</h3>
       {project.description && <p>{project.description}</p>}
     </Card>
   );

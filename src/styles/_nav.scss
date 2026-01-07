@@ -2,54 +2,48 @@
 
 nav {
     display: contents;
+
     ul {
+        display: flex;
+        gap: 25px;
         list-style: none;
         margin: 0;
         padding: 0;
-        display: flex;
-        gap: 25px;
 
         li {
-            display: flex;
             align-items: center;
+            display: flex;
         }
 
         a {
             color: colors.$day-300;
-            text-decoration: none;
             font-weight: 300;
+            text-decoration: none;
         }
     }
 }
 
 .nav-ribbon {
-    position: absolute;
     display: flex;
     justify-content: space-between;
     left: 30px;
+    position: absolute;
     right: 30px;
     top: 30px;
     z-index: 900;
 
-    .nav-drawer-toggle {
-        display: none;
-        background: transparent;
-        border: none;
-        color: colors.$day-300;
-    }
-
     .day-night-toggle {
+        align-items: center;
         background-color: #fff;
         border: none;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        display: flex;
-        align-items: center;
-        width: 70px;
-        height: 35px;
         border-radius: 20px;
-        z-index: 20;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         cursor: pointer;
+        display: flex;
+        height: 35px;
         position: relative;
+        width: 70px;
+        z-index: 20;
 
         svg {
             color: colors.$day-250;
@@ -57,21 +51,25 @@ nav {
         }
 
         &:before {
-            content: "";
-            position: absolute;
-            left: 5px;
-            width: 25px;
-            height: 25px;
-            border-radius: 50px;
             background-color: colors.$day-300;
+            border-radius: 50px;
+            content: "";
+            height: 25px;
+            left: 5px;
+            position: absolute;
+            width: 25px;
         }
+    }
+
+    .nav-drawer-toggle {
+        background: transparent;
+        border: none;
+        color: colors.$day-300;
+        display: none;
     }
 }
 
 .night .nav-ribbon {
-    .nav-drawer-toggle {
-        color: #fff;
-    }
     .day-night-toggle {
         background-color: colors.$night-50;
 
@@ -82,10 +80,15 @@ nav {
 
         &:before {
             background-color: colors.$night-300;
-            right: 5px;
             left: auto;
+            right: 5px;
         }
     }
+
+    .nav-drawer-toggle {
+        color: #fff;
+    }
+
     nav {
         a {
             color: #fff;
@@ -94,29 +97,29 @@ nav {
 }
 
 .drawer-container {
-    width: 100%;
-    height: 100%;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    height: 100%;
     justify-content: center;
     position: relative;
+    width: 100%;
 
     .close-drawer-button {
-        position: absolute;
-        top: 20px;
-        right: 20px;
         background: transparent;
         border: none;
         color: colors.$day-300;
+        position: absolute;
+        right: 20px;
+        top: 20px;
     }
 
     .internal-links {
         flex-direction: column;
+        font-size: 20px;
         gap: 40px;
         margin-bottom: 80px;
-        font-size: 20px;
-        
+
         li a {
             text-align: center;
         }
@@ -134,3 +137,4 @@ nav {
         }
     }
 }
+
