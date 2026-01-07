@@ -155,6 +155,9 @@
 .night .case-study h2 {
   border-bottom: solid 1px #fff;
 }
+.night .case-study .quote-block, .night .case-study .research-block {
+  background-color: rgb(66.6988636364, 83.8011363636, 72.6846590909);
+}
 
 .city {
   background-color: #F3EBE3;
@@ -392,19 +395,24 @@ svg.train-car .windows {
 nav {
   display: contents;
 }
+
+.external-links,
 nav ul {
   display: flex;
   gap: 25px;
   list-style: none;
   margin: 0;
   padding: 0;
+  color: #744B53;
 }
+.external-links li,
 nav ul li {
   align-items: center;
   display: flex;
 }
+.external-links a,
 nav ul a {
-  color: #744B53;
+  color: inherit;
   font-weight: 300;
   text-decoration: none;
 }
@@ -497,6 +505,10 @@ nav ul a {
   text-align: center;
 }
 
+.night .footer-block .external-links {
+  color: #fff;
+}
+
 @media (max-width: 700px) {
   .nav-ribbon .nav-drawer-toggle {
     display: block;
@@ -509,7 +521,7 @@ nav ul a {
   color: #744B53;
   margin: 0 auto;
   max-width: 800px;
-  padding-bottom: 5em;
+  padding-bottom: 2em;
   position: relative;
   width: 85%;
   z-index: 5;
@@ -710,10 +722,41 @@ h2,
 .external-link svg {
   width: 16px;
 }
+.external-link.icon-on-hover svg {
+  opacity: 0;
+}
+.external-link.icon-on-hover:hover svg {
+  opacity: 100%;
+}
 
 .invisible {
   clip: rect(0, 0, 0, 0);
   height: 0;
   overflow: hidden;
   width: 0;
+}
+
+.footer-block {
+  color: #744B53;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+  position: relative;
+  z-index: 5;
+  margin: 0 auto;
+  padding-bottom: 1.5em;
+}
+.footer-block a {
+  font-size: 14px;
+}
+.footer-block button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.night .footer-block {
+  color: #fff;
 }

@@ -1,4 +1,5 @@
 @use "colors";
+@use 'sass:color';
 
 .case-study {
     a {
@@ -188,5 +189,9 @@
 
     h2 {
         border-bottom: solid 1px #fff;
+    }
+
+    .quote-block, .research-block {
+        background-color: darken(colors.$night-300, 5%);
     }
 }

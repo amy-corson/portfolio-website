@@ -2,25 +2,27 @@
 
 nav {
     display: contents;
+}
 
-    ul {
-        display: flex;
-        gap: 25px;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+.external-links,
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: colors.$day-300;
 
-        li {
+     li {
             align-items: center;
             display: flex;
         }
 
         a {
-            color: colors.$day-300;
+            color: inherit;
             font-weight: 300;
             text-decoration: none;
         }
-    }
 }
 
 .nav-ribbon {
@@ -126,6 +128,10 @@ nav {
     }
 }
 
+.night .footer-block .external-links {
+    color: #fff;
+}
+
 @media (max-width: 700px) {
     .nav-ribbon {
         .nav-drawer-toggle {
@@ -137,4 +143,3 @@ nav {
         }
     }
 }
-
