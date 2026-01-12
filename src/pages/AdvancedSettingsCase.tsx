@@ -8,7 +8,6 @@ import metroTransitSettings from "../assets/case-study/research/metro-transit-se
 import STdesigns from "../assets/case-study/STdesigns.png";
 import figmaDesigns from "../assets/case-study/figmaDesigns.png";
 import ExternalLinkWithIcon from "../util/ExternalLinkWithIcon";
-import Footer from "../components/Footer";
 
 const quotes = [
   "Not intuitive how to interact with the mode selector",
@@ -320,7 +319,6 @@ const AdvancedSettingsCase = () => {
           </p>
         </section>
       </div>
-      <Footer />
     </div>
   );
 };

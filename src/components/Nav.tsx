@@ -14,9 +14,9 @@ const Nav: React.FC<NavBarProps> = ({closeDrawer}) => {
   return (
     <nav>
       <ul className="internal-links">
-        {Object.values(ROUTES).map((route) => (
+        {ROUTES.map((route) => (
           <li key={route.name} onClick={closeDrawer}>
-            <Link to={route.url}>{route.name}</Link>
+            <Link to={route.path}>{route.name}</Link>
           </li>
         ))}
         <li>

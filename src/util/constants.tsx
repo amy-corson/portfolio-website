@@ -11,31 +11,44 @@ import routeViewer from "../assets/projects/route-viewer.png";
 import advancedDesktop from "../assets/case-study/advanced-desktop.png";
 import advancedMobile from "../assets/case-study/advanced-phone.png";
 import AdvancedSettingsCase from "../pages/AdvancedSettingsCase";
+import { createRef, type JSX, type RefObject } from "react";
 
-export const ROUTES = {
-  home: {
+type Routes = {
+  name: string,
+  path: string,
+  element: JSX.Element
+  nodeRef: RefObject<HTMLDivElement | null>
+  children?: Array<Routes>
+}
+
+export const ROUTES: Array<Routes> = [
+  {
     name: "Home",
-    url: "/",
-    component: <Home />,
+    path: "/",
+    element: <Home />,
+    nodeRef: createRef<HTMLDivElement>(),
   },
-  about: {
+  {
     name: "About",
-    url: "/about",
-    component: <About />,
+    path: "/about",
+    element: <About />,
+    nodeRef: createRef<HTMLDivElement>(),
   },
-  projects: {
+  {
     name: "Projects",
-    url: "/projects",
-    component: <Projects />,
-    subProjects: {
-      advancedSettings: {
-        name: "AdvancedSettings",
-        url: "advanced-settings",
-        component: <AdvancedSettingsCase />,
+    path: "/projects",
+    element: <Projects />,
+    nodeRef: createRef<HTMLDivElement>(),
+    children: [
+      {
+        name: "Advanced Settings",
+        path: "advanced-settings",
+        element: <AdvancedSettingsCase />,
+        nodeRef: createRef<HTMLDivElement>(),
       },
-    },
+    ],
   },
-};
+];
 
 const githubLinkText = "View on Github";
 

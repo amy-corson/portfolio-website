@@ -269,7 +269,7 @@
   min-height: 300px;
   position: relative;
   top: 35px;
-  z-index: 1;
+  z-index: 0;
 }
 .city .sun {
   align-items: center;
@@ -853,6 +853,10 @@ h2,
 
 .night .footer-block {
   color: #fff;
+}
+
+.page-enter, .page-enter-active, .page-exit, .page-exit-active {
+  background-color: green !important;
 }
 
 @media (max-width: 650px) {
