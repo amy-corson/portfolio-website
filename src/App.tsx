@@ -5,6 +5,11 @@ import City from "./components/City";
 import Ribbon from "./components/Ribbon";
 import { ROUTES } from "./util/constants";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
+import { isMobile } from "./util/isMobile";
+
+const mobile = isMobile();
+const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
+const skipNavigation = () => document.querySelector('main')?.focus()
 
 function App() {
   const [isNight, setIsNight] = useState(false);
@@ -26,12 +31,15 @@ function App() {
   const nodeRef = [...ROUTES, ...subPaths].find(
     (route) => route?.path === path
   )?.nodeRef;
+
+  const shouldTransitionDelay = !mobile && !isReduced;
+
   return (
     <SwitchTransition>
       <CSSTransition
         key={path}
         nodeRef={nodeRef}
-        timeout={400}
+        timeout={shouldTransitionDelay ? 400 : 0}
         classNames="page"
         unmountOnExit
       >
@@ -40,6 +48,10 @@ function App() {
             ref={nodeRef}
             className={`city ${isNight ? "night" : ""} ${page}-page page`}
           >
+            <button
+              className="skip-nav-button"
+              onClick={skipNavigation}
+            >Skip navigation</button>
             <Ribbon
               setDrawerOpen={setDrawerOpen}
               drawerOpen={drawerOpen}

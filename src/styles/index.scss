@@ -23,6 +23,21 @@ body {
   padding: 0;
 }
 
+button.skip-nav-button {
+  color: initial;
+  position: fixed;
+  opacity: 0;
+  transition-duration: 0ms;
+  &:focus {
+    padding: 7px 24px;
+    top: 15px;
+    left: 15px;
+    opacity: 100%;
+    z-index: 100;
+    transition-duration: 0ms;
+  }
+}
+
 h1 {
   font-size: 60px;
   font-weight: 200;

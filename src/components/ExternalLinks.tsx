@@ -4,35 +4,24 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { Tooltip } from "@mui/material";
 import { useState } from "react";
 
-export function isMobile(): boolean {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  );
-}
-
 const ExternalSocialLinks = () => {
   const [buttonCopied, setButtonCopied] = useState(false);
 
-  const mobile = isMobile()
 
   const onClick = () => {
-    if (mobile) {
-      window.location.href = "mailto:aecorson@gmail.com"
-    } else {
-      navigator.clipboard.writeText("aecorson@gmail.com")
-    }
+    navigator.clipboard.writeText("aecorson@gmail.com")
     setButtonCopied(true)
     setTimeout(() => setButtonCopied(false), 2000)
   }
   return (
     <ul className="external-links">
       <li>
-        <a href="https://github.com/amy-corson">
+        <a href="https://github.com/amy-corson" aria-label="Github (Opens in external tab)" title="Github">
           <GitHubIcon />
         </a>
       </li>
       <li>
-        <a href="https://www.linkedin.com/in/amy-corson-68912857/">
+        <a href="https://www.linkedin.com/in/amy-corson-68912857/" aria-label="LinkedIn (Opens in external tab)" title="LinkedIn">
           <LinkedInIcon />
         </a>
       </li>

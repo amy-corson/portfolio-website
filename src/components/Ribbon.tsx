@@ -20,7 +20,7 @@ const Ribbon: React.FC<RibbonProps> = ({
 }) => {
   return (
     <div className="nav-ribbon">
-      <button className="day-night-toggle" onClick={() => toggleIsNight()}>
+      <button className="day-night-toggle" onClick={() => toggleIsNight()} aria-label="toggle day/night mode" title="toggle day/night mode">
         {isNight ? <BedtimeIcon /> : <SunnyIcon />}
       </button>
       <Nav />
