@@ -153,7 +153,8 @@ nav ul {
 }
 
 .night.drawer-container {
-    nav ul, button {
+    nav ul,
+    button {
         color: #fff;
     }
 }
@@ -167,5 +168,9 @@ nav ul {
         nav {
             display: none;
         }
+    }
+    .internal-links li, nav ul li  {
+        text-align: start;
+        display: block;
     }
 }

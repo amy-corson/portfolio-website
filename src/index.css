@@ -625,7 +625,8 @@ nav ul button {
   text-align: center;
 }
 
-.night.drawer-container nav ul, .night.drawer-container button {
+.night.drawer-container nav ul,
+.night.drawer-container button {
   color: #fff;
 }
 
@@ -635,6 +636,10 @@ nav ul button {
   }
   .nav-ribbon nav {
     display: none;
+  }
+  .internal-links li, nav ul li {
+    text-align: start;
+    display: block;
   }
 }
 .page-container {
@@ -684,6 +689,7 @@ nav ul button {
 .project-card {
   color: #744B53;
   text-decoration: none;
+  min-height: 200px;
 }
 .project-card a {
   text-decoration: none;
