@@ -16,8 +16,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
   return (
     <Card
+      target={internalLink ? "" : "_blank"}
       className={`${project.big ? "big" : ""} project-card icon-on-hover`}
-      to={internalLink ? project.url : ""}
+      to={project.url}
       href={internalLink ? "" : project.url}
     >
       <div className="project-image">

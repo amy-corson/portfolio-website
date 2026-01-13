@@ -62,21 +62,19 @@ export const ProjectsList = [
   },
   {
     title: "Nearby View Filtering",
-    url: "",
-    // description:
-    // "Adding filters to OTP's nearby entities list. This PR is dedicated to anyone in downtown Seattle trying to catch the bus while standing next to 17 undocked Lime scooters.",
+    url: "https://github.com/opentripplanner/otp-react-redux/pull/1442",
     image: nearbyFilteringImage,
     linkText: githubLinkText,
   },
   {
     title: "User Saved Trip Cards",
-    url: "",
+    url: "https://github.com/opentripplanner/otp-react-redux/pull/1151",
     image: savedTripsImage,
     linkText: githubLinkText,
   },
   {
     title: "Portfolio Website",
-    url: "",
+    url: "https://github.com/amy-corson/portfolio-website",
     image: portfolioSmall,
     linkText: githubLinkText,
   },

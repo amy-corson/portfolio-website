@@ -84,13 +84,13 @@ const AdvancedSettingsCase = () => {
             closely with your local transit agency to do it, meaning the trips
             we suggest are more likely to be accurate.
           </p>
-          <h3>So what’s the trip form?</h3>
+          <h3>So What’s the Trip Form?</h3>
           <p>
             If the goal of OTP is to plan trips, the trip form is the most
             important component in the application. It’s how we find out where
             the user is going, and how they want to get there.
           </p>
-          <h3>So what’s the issue?</h3>
+          <h3>So What’s the Issue?</h3>
           <div className="problem-statement">
             <p className="statement-block">
               In early 2024, our client Sound Transit conducted a usability
@@ -130,7 +130,7 @@ const AdvancedSettingsCase = () => {
           </p>
         </section>
         <section>
-          <h2>Methodology</h2>
+          <h2>methodology</h2>
           <div className="quotes">
             <div className="quote-container">
               {quotes.map((q) => quoteBlock(q))}
@@ -146,7 +146,7 @@ const AdvancedSettingsCase = () => {
             in the users who reported they were able to successfully plan trips
             on our application.
           </p>
-          <h3>The research</h3>
+          <h3>The Research</h3>
           <p>
             We spent a lot of time looking at other transit trip planners. We
             started to notice a common theme: most applications had some sort of
@@ -185,7 +185,7 @@ const AdvancedSettingsCase = () => {
               </li>
             </ul>
           </p>
-          <h3>the designs</h3>
+          <h3> The Designs</h3>
           <img src={STdesigns} className="fullscreen-design" />
           <p className="caption">Intial designs proposed by ST UX team</p>
           <p>
@@ -238,7 +238,7 @@ const AdvancedSettingsCase = () => {
               classNames="caption"
             />
           </a>
-          <h3>development</h3>
+          <h3>Development</h3>
           At this time, there were five developers on the team. Two of them
           helped write code for this project (although the majority of the
           commits and code were mine). The other two helped with PR review.
@@ -259,7 +259,7 @@ const AdvancedSettingsCase = () => {
               string="view on github"
             />
           </p>
-          <h3>challenges</h3>
+          <h3>Challenges</h3>
           <p>
             <strong>Open source:</strong> The open source nature of the OTP
             project proved a unique challenge. We had to design something that
@@ -293,8 +293,8 @@ const AdvancedSettingsCase = () => {
           </p>
         </section>
         <section>
-          <h2>Conclusions</h2>
-          <h3>results</h3>
+          <h2>conclusions</h2>
+          <h3>Results</h3>
           <p>
             The June 2025 Sound Transit open beta found a{" "}
             <strong>ten point jump in System Usability Scale Score</strong> from
@@ -305,7 +305,7 @@ const AdvancedSettingsCase = () => {
             expressing satisfaction with the changes and passing along approval
             from their users.
           </p>
-          <h3>takeaways</h3>
+          <h3>Takeaways</h3>
           <p>
             It’s hard to update a legacy application. It means overhauling old
             processes, consulting with users, and admitting past mistakes.
