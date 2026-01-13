@@ -4,7 +4,6 @@ import { useState } from "react";
 import City from "./components/City";
 import Ribbon from "./components/Ribbon";
 import { ROUTES } from "./util/constants";
-import { Skyline } from "./assets/city/Skyline";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 
 function App() {
@@ -28,35 +27,32 @@ function App() {
     (route) => route?.path === path
   )?.nodeRef;
   return (
-    <div>
-      <SwitchTransition>
-        <CSSTransition
-          key={path}
-          nodeRef={nodeRef}
-          timeout={300}
-          classNames="page"
-          unmountOnExit
-        >
-          {() => (
-            <div
-              ref={nodeRef}
-              className={`city ${isNight ? "night" : ""} ${page}-page page`}
-            >
-              <Ribbon
-                setDrawerOpen={setDrawerOpen}
-                drawerOpen={drawerOpen}
-                toggleIsNight={() => setIsNight(!isNight)}
-                isNight={isNight}
-              />
-              <Skyline />
-              <div className="house-base">{currentOutlet}</div>
+    <SwitchTransition>
+      <CSSTransition
+        key={path}
+        nodeRef={nodeRef}
+        timeout={400}
+        classNames="page"
+        unmountOnExit
+      >
+        {() => (
+          <div
+            ref={nodeRef}
+            className={`city ${isNight ? "night" : ""} ${page}-page page`}
+          >
+            <Ribbon
+              setDrawerOpen={setDrawerOpen}
+              drawerOpen={drawerOpen}
+              toggleIsNight={() => setIsNight(!isNight)}
+              isNight={isNight}
+            />
+            <main tabIndex={-1}>{currentOutlet}</main>
 
-              <City isNight={isNight} page={page}></City>
-            </div>
-          )}
-        </CSSTransition>
-      </SwitchTransition>
-    </div>
+            {page === "home" && <City isNight={isNight} page={page}></City>}
+          </div>
+        )}
+      </CSSTransition>
+    </SwitchTransition>
   );
 }
 

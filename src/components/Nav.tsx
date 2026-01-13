@@ -1,11 +1,9 @@
-import { Link } from "react-router";
-import { ROUTES } from "../util/constants";
+import {  ROUTES } from "../util/constants";
 
-import React from "react";
 import ExternalSocialLinks from "./ExternalLinks";
 import ExternalLinkWithIcon from "../util/ExternalLinkWithIcon";
+import { Link } from "react-router-dom";
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface NavBarProps {
   closeDrawer?: () => void
 }
@@ -20,7 +18,11 @@ const Nav: React.FC<NavBarProps> = ({closeDrawer}) => {
           </li>
         ))}
         <li>
-          <ExternalLinkWithIcon url='' string='Resume' classNames="icon-on-hover" />
+          <ExternalLinkWithIcon
+            url="https://drive.google.com/file/d/1825s6gAfmFaU0piygZFFSIgbyUN7Gfa-/view?usp=sharing"
+            string="Resume"
+            classNames="icon-on-hover"
+          />
         </li>
       </ul>
       <ExternalSocialLinks />

@@ -4,108 +4,222 @@
 @forward "nav";
 @forward "page-container";
 @forward "projects";
+@forward "about";
 @use "colors";
 
 .app {
-    position: relative;
+  position: relative;
 
-    .city {
-        z-index: 0;
-    }
+  .city {
+    z-index: 0;
+  }
 }
 
 body {
-    font-family: "Inter", sans-serif;
-    font-weight: 300;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-    font-size: 60px;
-    font-weight: 200;
+  font-size: 60px;
+  font-weight: 200;
 }
 
 h1,
 h2,
 .header {
-    font-family: "Hedvig Letters Serif", serif;
+  font-family: "Hedvig Letters Serif", serif;
 }
 
 .external-link {
-    display: inline-flex;
-    gap: 5px;
-    align-items: center;
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
 
+  svg {
+    width: 16px;
+  }
+
+  &.icon-on-hover {
     svg {
-        width: 16px;
+      opacity: 0;
+      transition: all 150ms ease;
     }
 
-    &.icon-on-hover {
-        svg {
-            opacity: 0;
-            transition: all 100ms ease;
-        }
-
-        &:hover {
-            svg {
-                opacity: 100%;
-                transition: all 100ms ease;
-            }
-        }
+    &:hover,
+    &:focus {
+      svg {
+        opacity: 100%;
+        transition: all 150ms ease;
+      }
     }
+  }
 }
 
 .invisible {
-    clip: rect(0, 0, 0, 0);
-    height: 0;
-    overflow: hidden;
-    width: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 0;
+  overflow: hidden;
+  width: 0;
+}
+
+.caption {
+  font-size: 12px;
+  justify-content: center;
+  margin: 0;
+  text-align: center;
+  width: 100%;
 }
 
 .footer-block {
-    color: colors.$day-300;
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
+  color: colors.$day-300;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+  position: relative;
+  z-index: 5;
+  margin: 0 auto;
+  padding-bottom: 1.5em;
+
+  a {
+    font-size: 14px;
+  }
+
+  button {
+    border: 0;
     background: transparent;
-    position: relative;
-    z-index: 5;
-    margin: 0 auto;
-    padding-bottom: 1.5em;
-
-    a {
-        font-size: 14px;
-    }
-
-    button {
-        border: 0;
-        background: transparent;
-        color: inherit;
-        cursor: pointer;
-    }
-
+    color: inherit;
+    cursor: pointer;
+  }
 }
 
 .night .footer-block {
-    color: #fff;
+  color: #fff;
 }
 
-.page-enter, .page-enter-active, .page-exit, .page-exit-active {
-    background-color: green !important;
+$animation-timing: 400ms;
+$half-timing: calc($animation-timing / 2);
+
+$fast-timing: calc($animation-timing - 200ms);
+$medium-timing: calc($animation-timing - 100ms);
+$slow-timing: $animation-timing;
+
+$custom-c-b: cubic-bezier(0, 0.28, 0.67, 1.05);
+
+@keyframes fade {
+  0% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0%;
+  }
+}
+
+@keyframes move-down {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(300px);
+  }
+}
+
+.home-page {
+  &.page-exit,
+  &.page-exit-active {
+    .home,
+    .sun,
+    .moon {
+      opacity: 100%;
+      animation: $half-timing ease-in forwards fade;
+    }
+
+    .house-container,
+    .house-base,
+    .train-cars {
+      animation: $fast-timing ease-in forwards move-down;
+    }
+
+    .rail-container {
+      animation: $medium-timing ease-in forwards move-down;
+    }
+
+    .train-cars,
+    .train-1,
+    .train-2 {
+      animation: $half-timing ease-in-out forwards fade;
+    }
+
+    .skyline {
+      animation: $slow-timing ease-in-out forwards move-down;
+    }
+  }
+
+  &.page-enter,
+  &.page-enter-active {
+    .home,
+    .sun,
+    .moon {
+      opacity: 0%;
+      animation: $animation-timing ease-in reverse forwards fade;
+    }
+
+    .house-container,
+    .house-base {
+      animation: $slow-timing ease-in reverse forwards move-down;
+    }
+
+    .rail-container {
+      animation: $medium-timing ease-in reverse forwards move-down;
+    }
+
+    .skyline {
+      animation: $fast-timing ease-in reverse forwards move-down;
+    }
+
+    .train-cars {
+      &.train-1,
+      &.train-2 {
+        display: none;
+      }
+    }
+  }
+}
+
+.about-page,
+.projects-page,
+.advanced-settings-page {
+  &.page-exit,
+  &.page-exit-active {
+    .page-container,
+    .footer-block {
+      animation: $animation-timing ease-in forwards fade;
+    }
+  }
+
+  &.page-enter,
+  &.page-enter-active {
+    .page-container,
+    .footer-block {
+      animation: $animation-timing ease-in reverse forwards fade;
+    }
+  }
 }
 
 @media (max-width: 650px) {
-    h1 {
-       font-size: 40px; 
-    }
-    
+  h1 {
+    font-size: 40px;
+  }
 }
 
 @media (max-width: 450px) {
-    body {
-      font-size: 18px;  
-    }
-    
+  body {
+    font-size: 18px;
+  }
 }

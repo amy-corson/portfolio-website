@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import ExternalLinkWithIcon from "../util/ExternalLinkWithIcon";
 
 type Project = {
   url: string;
@@ -15,7 +16,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
   return (
     <Card
-      className={`${project.big ? "big" : ""} project-card`}
+      className={`${project.big ? "big" : ""} project-card icon-on-hover`}
       to={internalLink ? project.url : ""}
       href={internalLink ? "" : project.url}
     >
@@ -23,7 +24,11 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <img src={project.image} />
         <div className="card-text">{project.linkText}</div>
       </div>
-      <h3>{project.title}</h3>
+      {!internalLink ? (
+        <ExternalLinkWithIcon url={project.url} string={project.title} />
+      ) : (
+        <p>{project.title}</p>
+      )}
       {project.description && <p>{project.description}</p>}
     </Card>
   );

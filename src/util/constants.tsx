@@ -98,3 +98,6 @@ export const CASE_STUDY = {
     duration: "5 months",
   },
 };
+
+
+export const ANIMATION_DELAY = 2000

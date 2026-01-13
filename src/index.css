@@ -11,13 +11,6 @@
   justify-self: center;
   width: 1px;
 }
-.case-study .caption {
-  font-size: 12px;
-  justify-content: center;
-  margin: 0;
-  text-align: center;
-  width: 100%;
-}
 .case-study .details {
   display: grid;
   gap: 1.5em;
@@ -241,13 +234,6 @@
   top: 10px;
   z-index: 2;
 }
-.city .house-base {
-  background-color: #fffdfb;
-  bottom: 0;
-  margin-top: -100px;
-  position: relative;
-  width: 100%;
-}
 .city .house-container {
   bottom: 50px;
   display: flex;
@@ -297,6 +283,37 @@
   display: flex;
   width: 300px;
   z-index: 5;
+  position: absolute;
+}
+@keyframes train-left-to-right {
+  0% {
+    transform: translateX(-300px);
+  }
+  70% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+@keyframes train-right-to-left {
+  0% {
+    transform: translateX(100vw);
+  }
+  75% {
+    transform: translateX(-300px);
+  }
+  100% {
+    transform: translateX(-300px);
+  }
+}
+.city .train-1 {
+  transform: translateX(-300px);
+  animation: train-left-to-right 15s forwards linear infinite 1s;
+}
+.city .train-2 {
+  transform: translateX(100vw);
+  animation: train-right-to-left 20s forwards linear infinite 8s;
 }
 .city svg .accents,
 .city svg .house,
@@ -336,7 +353,7 @@
 
 .city.night {
   transition: all 250ms ease;
-  background-color: #6d7f76;
+  background-color: #4E6255;
 }
 .city.night > * {
   transition: all 250ms ease;
@@ -386,9 +403,6 @@
 }
 .city.night svg .windows {
   fill: #DBDEDC;
-}
-.city.night.home-page {
-  background-color: #4E6255;
 }
 .city.night.home-page .house-base {
   background-color: #829087;
@@ -474,6 +488,7 @@ svg.train-car .windows {
 }
 nav {
   display: contents;
+  text-transform: capitalize;
 }
 
 .external-links,
@@ -489,6 +504,7 @@ nav ul {
 nav ul li {
   align-items: center;
   display: flex;
+  justify-content: center;
 }
 .external-links a,
 nav ul a {
@@ -500,6 +516,15 @@ nav ul a {
 .external-links a:hover,
 nav ul a:hover {
   opacity: 85%;
+}
+.external-links button,
+nav ul button {
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  margin-top: -4px;
 }
 
 .nav-ribbon {
@@ -560,7 +585,14 @@ nav ul a:hover {
   background-color: #4E6255;
   transform: translateX(35px);
 }
+.night .nav-ribbon nav ul {
+  color: #fff;
+}
 .night .nav-ribbon .nav-drawer-toggle {
+  color: #fff;
+}
+
+.night .footer-block .external-links {
   color: #fff;
 }
 
@@ -597,10 +629,6 @@ nav ul a:hover {
   color: #fff;
 }
 
-.footer-block .external-links {
-  color: #fff;
-}
-
 @media (max-width: 700px) {
   .nav-ribbon .nav-drawer-toggle {
     display: block;
@@ -612,6 +640,7 @@ nav ul a:hover {
 .page-container {
   color: #744B53;
   margin: 0 auto;
+  margin-top: 100px;
   max-width: 800px;
   padding-bottom: 2em;
   position: relative;
@@ -629,41 +658,10 @@ nav ul a:hover {
   color: #fff;
 }
 
-.city.projects-page,
-.city.advanced-settings-page,
-.city.about-page {
-  background-color: #e9d0ca;
-}
-.city.projects-page .house-base,
-.city.advanced-settings-page .house-base,
-.city.about-page .house-base {
-  background: #fffdfb;
-}
-.city.projects-page .skyline,
-.city.advanced-settings-page .skyline,
-.city.about-page .skyline {
-  fill: #fffdfb;
-}
 .city.projects-page h1,
 .city.advanced-settings-page h1,
 .city.about-page h1 {
   margin-top: 0;
-}
-
-.city.night.projects-page,
-.city.night.about-page,
-.city.night.advanced-settings-page {
-  background-color: #6d7f76;
-}
-.city.night.projects-page .house-base,
-.city.night.about-page .house-base,
-.city.night.advanced-settings-page .house-base {
-  background: #4E6255;
-}
-.city.night.projects-page .skyline,
-.city.night.about-page .skyline,
-.city.night.advanced-settings-page .skyline {
-  fill: #4E6255;
 }
 
 .projects {
@@ -678,11 +676,6 @@ nav ul a:hover {
   flex-direction: column;
   justify-content: center;
 }
-.projects h3 {
-  font-weight: 300;
-  margin: 0 0 0.1em;
-  text-align: center;
-}
 
 .big {
   grid-column: 1/span 2;
@@ -691,6 +684,17 @@ nav ul a:hover {
 .project-card {
   color: #744B53;
   text-decoration: none;
+}
+.project-card a {
+  text-decoration: none;
+}
+.project-card.icon-on-hover svg {
+  opacity: 0;
+  transition: all 150ms ease;
+}
+.project-card.icon-on-hover:hover svg, .project-card.icon-on-hover:focus svg {
+  opacity: 100%;
+  transition: all 150ms ease;
 }
 .project-card .project-image {
   align-items: center;
@@ -780,6 +784,22 @@ nav ul a:hover {
     grid-template-columns: 1fr;
   }
 }
+.about-page .img-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.about-page img {
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about-page .lake-pic {
+  width: 95%;
+}
+
 .app {
   position: relative;
 }
@@ -816,11 +836,11 @@ h2,
 }
 .external-link.icon-on-hover svg {
   opacity: 0;
-  transition: all 100ms ease;
+  transition: all 150ms ease;
 }
-.external-link.icon-on-hover:hover svg {
+.external-link.icon-on-hover:hover svg, .external-link.icon-on-hover:focus svg {
   opacity: 100%;
-  transition: all 100ms ease;
+  transition: all 150ms ease;
 }
 
 .invisible {
@@ -828,6 +848,14 @@ h2,
   height: 0;
   overflow: hidden;
   width: 0;
+}
+
+.caption {
+  font-size: 12px;
+  justify-content: center;
+  margin: 0;
+  text-align: center;
+  width: 100%;
 }
 
 .footer-block {
@@ -855,8 +883,98 @@ h2,
   color: #fff;
 }
 
-.page-enter, .page-enter-active, .page-exit, .page-exit-active {
-  background-color: green !important;
+@keyframes fade {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+@keyframes move-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(300px);
+  }
+}
+.home-page.page-exit .home,
+.home-page.page-exit .sun,
+.home-page.page-exit .moon, .home-page.page-exit-active .home,
+.home-page.page-exit-active .sun,
+.home-page.page-exit-active .moon {
+  opacity: 100%;
+  animation: 200ms ease-in forwards fade;
+}
+.home-page.page-exit .house-container,
+.home-page.page-exit .house-base,
+.home-page.page-exit .train-cars, .home-page.page-exit-active .house-container,
+.home-page.page-exit-active .house-base,
+.home-page.page-exit-active .train-cars {
+  animation: 200ms ease-in forwards move-down;
+}
+.home-page.page-exit .rail-container, .home-page.page-exit-active .rail-container {
+  animation: 300ms ease-in forwards move-down;
+}
+.home-page.page-exit .train-cars,
+.home-page.page-exit .train-1,
+.home-page.page-exit .train-2, .home-page.page-exit-active .train-cars,
+.home-page.page-exit-active .train-1,
+.home-page.page-exit-active .train-2 {
+  animation: 200ms ease-in-out forwards fade;
+}
+.home-page.page-exit .skyline, .home-page.page-exit-active .skyline {
+  animation: 400ms ease-in-out forwards move-down;
+}
+.home-page.page-enter .home,
+.home-page.page-enter .sun,
+.home-page.page-enter .moon, .home-page.page-enter-active .home,
+.home-page.page-enter-active .sun,
+.home-page.page-enter-active .moon {
+  opacity: 0%;
+  animation: 400ms ease-in reverse forwards fade;
+}
+.home-page.page-enter .house-container,
+.home-page.page-enter .house-base, .home-page.page-enter-active .house-container,
+.home-page.page-enter-active .house-base {
+  animation: 400ms ease-in reverse forwards move-down;
+}
+.home-page.page-enter .rail-container, .home-page.page-enter-active .rail-container {
+  animation: 300ms ease-in reverse forwards move-down;
+}
+.home-page.page-enter .skyline, .home-page.page-enter-active .skyline {
+  animation: 200ms ease-in reverse forwards move-down;
+}
+.home-page.page-enter .train-cars.train-1, .home-page.page-enter .train-cars.train-2, .home-page.page-enter-active .train-cars.train-1, .home-page.page-enter-active .train-cars.train-2 {
+  display: none;
+}
+
+.about-page.page-exit .page-container,
+.about-page.page-exit .footer-block, .about-page.page-exit-active .page-container,
+.about-page.page-exit-active .footer-block,
+.projects-page.page-exit .page-container,
+.projects-page.page-exit .footer-block,
+.projects-page.page-exit-active .page-container,
+.projects-page.page-exit-active .footer-block,
+.advanced-settings-page.page-exit .page-container,
+.advanced-settings-page.page-exit .footer-block,
+.advanced-settings-page.page-exit-active .page-container,
+.advanced-settings-page.page-exit-active .footer-block {
+  animation: 400ms ease-in forwards fade;
+}
+.about-page.page-enter .page-container,
+.about-page.page-enter .footer-block, .about-page.page-enter-active .page-container,
+.about-page.page-enter-active .footer-block,
+.projects-page.page-enter .page-container,
+.projects-page.page-enter .footer-block,
+.projects-page.page-enter-active .page-container,
+.projects-page.page-enter-active .footer-block,
+.advanced-settings-page.page-enter .page-container,
+.advanced-settings-page.page-enter .footer-block,
+.advanced-settings-page.page-enter-active .page-container,
+.advanced-settings-page.page-enter-active .footer-block {
+  animation: 400ms ease-in reverse forwards fade;
 }
 
 @media (max-width: 650px) {

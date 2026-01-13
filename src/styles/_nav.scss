@@ -2,6 +2,7 @@
 
 nav {
     display: contents;
+    text-transform: capitalize;
 }
 
 .external-links,
@@ -16,6 +17,7 @@ nav ul {
     li {
         align-items: center;
         display: flex;
+        justify-content: center;
     }
 
     a {
@@ -27,6 +29,15 @@ nav ul {
         &:hover {
             opacity: 85%;
         }
+    }
+
+    button {
+        border: 0;
+        cursor: pointer;
+        background-color: transparent;
+        color: inherit;
+        padding: 0;
+        margin-top: -4px;
     }
 }
 
@@ -96,9 +107,17 @@ nav ul {
         }
     }
 
+    nav ul {
+        color: #fff;
+    }
+
     .nav-drawer-toggle {
         color: #fff;
     }
+}
+
+.night .footer-block .external-links {
+    color: #fff;
 }
 
 .drawer-container {
@@ -137,9 +156,6 @@ nav ul {
     nav ul, button {
         color: #fff;
     }
-}
-.footer-block .external-links {
-    color: #fff;
 }
 
 @media (max-width: 700px) {

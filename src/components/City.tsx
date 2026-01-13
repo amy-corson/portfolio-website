@@ -3,6 +3,7 @@ import { Houses } from "../assets/city/Houses";
 import { TrainCar } from "../assets/city/TrainCar";
 import { Rail } from "../assets/city/Rail";
 import Brightness3Icon from "@mui/icons-material/Brightness3";
+import { Skyline } from "../assets/city/Skyline";
 
 interface CityProps {
   isNight: boolean;
@@ -44,8 +45,10 @@ const City: React.FC<CityProps> = ({ page }) => {
           <div className="sun">
             <div />
           </div>
+          <Skyline />
           <Train className="train-1" />
           <Train className="train-2" />
+          <div className="house-base"></div>
           <div className="house-container">
             {Array.from({ length: numHouses }, (_, i) => (
               <Houses key={i} />

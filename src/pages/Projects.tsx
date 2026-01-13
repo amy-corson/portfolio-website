@@ -14,8 +14,7 @@ const Projects = () => {
           <p>
             I&apos;m lucky to work on an open source project where my a lot of
             my day-to-day work is public. Below you&apos;ll find some of the
-            projects I&apos;m proud of. You&apos;ll also probably find some
-            missteps I&apos;m embarassed by! This job can be humbling.
+            projects I&apos;m proud of.
           </p>
           <div className="projects">
             {ProjectsList.map((project) => (

@@ -1,8 +1,17 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import { Tooltip } from "@mui/material";
+import { useState } from "react";
 
 const ExternalSocialLinks = () => {
+  const [buttonCopied, setButtonCopied] = useState(false);
+
+  const onClick = () => {
+    navigator.clipboard.writeText("aecorson@gmail.com");
+    setButtonCopied(true)
+    setTimeout(() => setButtonCopied(false), 2000)
+  }
   return (
     <ul className="external-links">
       <li>
@@ -16,9 +25,11 @@ const ExternalSocialLinks = () => {
         </a>
       </li>
       <li>
-        <a href="https://github.com/amy-corson">
-          <MailOutlineIcon />
-        </a>
+        <Tooltip title={buttonCopied ? "Copied!" : "Copy email to clipboard"} placement="bottom-start">
+          <button onClick={onClick} aria-label="click to copy email address to clipboard">
+            <MailOutlineIcon />
+          </button>
+        </Tooltip>
       </li>
     </ul>
   );

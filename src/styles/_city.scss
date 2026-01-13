@@ -25,14 +25,6 @@
         z-index: 2;
     }
 
-    .house-base {
-        background-color: colors.$day-25;
-        bottom: 0;
-        margin-top: -100px;
-        position: relative;
-        width: 100%;
-    }
-
     .house-container {
         bottom: 50px;
         display: flex;
@@ -88,6 +80,41 @@
         display: flex;
         width: 300px;
         z-index: 5;
+        position: absolute;
+    }
+
+    @keyframes train-left-to-right {
+        0% {
+            transform: translateX(-300px);
+        }
+        70% {
+            transform: translateX(100vw);
+        }
+        100% {
+            transform: translateX(100vw);
+        }
+    }
+
+    @keyframes train-right-to-left {
+        0% {
+            transform: translateX(100vw);
+        }
+        75% {
+            transform: translateX(-300px);
+        }
+        100% {
+            transform: translateX(-300px);
+        }
+    }
+
+    .train-1 {
+        transform: translateX(-300px);
+        animation: train-left-to-right 15s forwards linear infinite 1s;
+    }
+
+    .train-2 {
+        transform: translateX(100vw);
+        animation: train-right-to-left 20s forwards linear infinite 8s;
     }
 
     svg {
@@ -125,6 +152,7 @@
             top: auto;
             width: 100%;
             z-index: 11;
+            
         }
 
         .skyline {
@@ -137,7 +165,7 @@
 
 .city.night {
     transition: all 250ms ease;
-    background-color: colors.$night-250;
+    background-color: colors.$night-300;
 
     > * {
         transition: all 250ms ease;
@@ -205,8 +233,6 @@
     }
 
     &.home-page {
-        background-color: colors.$night-300;
-
         .house-base {
             background-color: colors.$night-200;
         }
