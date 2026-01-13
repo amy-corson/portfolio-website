@@ -1,6 +1,5 @@
 import { Link } from "react-router";
-import ExternalLinkWithIcon from "../util/ExternalLinkWithIcon";
-
+import LaunchIcon from "@mui/icons-material/Launch";
 type Project = {
   url: string;
   big?: boolean;
@@ -18,18 +17,16 @@ const ProjectCard = ({ project }: { project: Project }) => {
     <Card
       target={internalLink ? "" : "_blank"}
       className={`${project.big ? "big" : ""} project-card icon-on-hover`}
-      to={project.url}
+      to={internalLink ? project.url : ""}
       href={internalLink ? "" : project.url}
     >
       <div className="project-image">
         <img src={project.image} />
         <div className="card-text">{project.linkText}</div>
       </div>
-      {!internalLink ? (
-        <ExternalLinkWithIcon url={project.url} string={project.title} />
-      ) : (
-        <p>{project.title}</p>
-      )}
+      <p className="external-link">
+        {project.title} {!internalLink && <LaunchIcon fontSize="small" />}
+      </p>
       {project.description && <p>{project.description}</p>}
     </Card>
   );

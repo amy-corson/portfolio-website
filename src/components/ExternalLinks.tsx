@@ -4,11 +4,23 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { Tooltip } from "@mui/material";
 import { useState } from "react";
 
+export function isMobile(): boolean {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+}
+
 const ExternalSocialLinks = () => {
   const [buttonCopied, setButtonCopied] = useState(false);
 
+  const mobile = isMobile()
+
   const onClick = () => {
-    navigator.clipboard.writeText("aecorson@gmail.com");
+    if (mobile) {
+      window.location.href = "mailto:aecorson@gmail.com"
+    } else {
+      navigator.clipboard.writeText("aecorson@gmail.com")
+    }
     setButtonCopied(true)
     setTimeout(() => setButtonCopied(false), 2000)
   }
