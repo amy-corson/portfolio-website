@@ -149,6 +149,13 @@ nav ul {
         li a {
             text-align: center;
         }
+
+        .external-link {
+            gap: 0;
+        }
+        svg {
+            display: none;
+        }
     }
 }
 
@@ -168,9 +175,5 @@ nav ul {
         nav {
             display: none;
         }
-    }
-    .internal-links li, nav ul li  {
-        text-align: start;
-        display: block;
     }
 }

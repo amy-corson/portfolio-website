@@ -137,7 +137,11 @@
     }
 
     &.home-page {
-        height: 100vh;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
         overflow: hidden;
 
         > * {
@@ -269,6 +273,17 @@ svg.train-car {
         & > div {
             height: 50px;
             width: 50px;
+        }
+    }
+}
+
+@media (max-width: 500px) { 
+    .city.home-page {
+        .house-base, .skyline, .houses, .rail-container, .home {
+            transform: translateY(20px)
+        }
+        .train-cars {
+            bottom: 110px;
         }
     }
 }

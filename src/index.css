@@ -330,7 +330,11 @@
   fill: #e9d0ca;
 }
 .city.home-page {
-  height: 100vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   overflow: hidden;
 }
 .city.home-page > * {
@@ -434,6 +438,14 @@ svg.train-car .windows {
   .city .sun > div {
     height: 50px;
     width: 50px;
+  }
+}
+@media (max-width: 500px) {
+  .city.home-page .house-base, .city.home-page .skyline, .city.home-page .houses, .city.home-page .rail-container, .city.home-page .home {
+    transform: translateY(20px);
+  }
+  .city.home-page .train-cars {
+    bottom: 110px;
   }
 }
 .home {
@@ -624,6 +636,12 @@ nav ul button {
 .drawer-container .internal-links li a {
   text-align: center;
 }
+.drawer-container .internal-links .external-link {
+  gap: 0;
+}
+.drawer-container .internal-links svg {
+  display: none;
+}
 
 .night.drawer-container nav ul,
 .night.drawer-container button {
@@ -636,10 +654,6 @@ nav ul button {
   }
   .nav-ribbon nav {
     display: none;
-  }
-  .internal-links li, nav ul li {
-    text-align: start;
-    display: block;
   }
 }
 .page-container {
