@@ -60,24 +60,16 @@
         margin-top: 0;
     }
 
-    .problem-statement {
-        align-items: center;
+    .design-gifs {
         display: flex;
-        gap: 3em;
-        justify-content: space-between;
-
-        .design-gif {
-            img {
-                border: 3px solid #fff;
-                box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-                max-height: 300px;
-                max-width: 100%;
-            }
-        }
-
-        p.statement-block {
-            margin: 0;
-            width: 65%;
+        justify-content: space-around;
+        margin: 2em 0;
+        gap: 15px;
+        img {
+            border: 3px solid #fff;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            max-height: 300px;
+            max-width: 100%;
         }
     }
 
@@ -239,6 +231,10 @@
         h1 span.subtitle {
             margin-bottom: -5px;
         }
+    }
+    .design-gifs {
+        flex-direction: column;
+        align-items: center;
     }
 }
 

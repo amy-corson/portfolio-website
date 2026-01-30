@@ -48,7 +48,10 @@ const Ribbon: React.FC<RibbonProps> = ({
           >
             <CloseIcon />
           </button>
-          <Nav closeDrawer={() => setDrawerOpen(false)}/>
+          <Nav closeDrawer={() => {
+            // TODO: no page transitions on mobile viewports
+            setTimeout(() => setDrawerOpen(false), 100)
+            }}/>
         </div>
       </Drawer>
     </div>

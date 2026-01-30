@@ -16,6 +16,9 @@ const Projects = () => {
             my day-to-day work is public. Below you&apos;ll find some of the
             projects I&apos;m proud of.
           </p>
+          <p>
+            All of the projects featured here were developed from my designs. You can look at the Advanced Settings case study to read more about some of my design process and see wireframes. 
+          </p>
           <div className="projects">
             {ProjectsList.map((project) => (
               <ProjectCard key={project.title} project={project} />

@@ -1,7 +1,4 @@
 import Footer from "../components/Footer";
-import amyPic from "../assets/about-me/amy-pic.jpg";
-import mrMan from "../assets/about-me/mr-man.png";
-import lake from "../assets/about-me/lake.jpg";
 
 const About = () => {
   return (
@@ -11,17 +8,11 @@ const About = () => {
 
         <p>
           I&apos;m a software engineer and UX designer based in Chicago. A few
-          years ago, I quit my job as an adminstrative assistant and learned to
-          code because I wanted more of a challenge in my career. These days, I
-          work at Arcadis as part of their Transit Data team; designing and
-          building front end components for open-source transit trip planners.
+          years ago, I learned to code because I wanted more of a challenge in my career. These days, I work at Arcadis as part of their Transit Data team; designing and building front end components for open-source transit trip planners.
         </p>
         <p>
           It feels like hyperbole to say &quot;I&apos;m very passionate about
-          bridging the gap between complex data and user experience&quot; but
-          it&apos;s true! I feel lucky to get to work with a lot of chaotic and
-          messy GTFS data and carefully prune it into a shape that helps users
-          catch their bus on time.
+          bridging the gap between complex data and real-world user experience&quot; but it&apos;s true! I feel lucky to get to work with a lot of chaotic and messy GTFS data and carefully prune it into a shape that helps users catch their bus on time.
         </p>
         <p>
           I also care deeply about making sure the internet is accessible for
@@ -33,38 +24,13 @@ const About = () => {
           headphones aren&apos;t plugged in and your volume is on high.
         </p>
         <p>
-          Outside of work I do a lot of comedy writing and performance (you
-          probably could already tell, I know the case study I wrote is a real
-          cut-up.) I perform improv with my friends, sketch with my sketch
-          comedy duo Mr. Man, and storytelling by myself. Chicago has an
-          incredible indie comedy scene so feel free to ask me for show
-          recommendations, I have strong opinions and I&apos;m not afraid to
-          make enemies!
+          Outside of work I do a lot of comedy writing and performance. I
+          perform improv with my friends, sketch with my sketch comedy duo Mr.Man, and storytelling by myself. Chicago has an incredible indie comedy scene so feel free to ask me for show recommendations, I have strong opinions and I&apos;m not afraid to make enemies!
         </p>
         <p>
           More than anything, I love Chicago. I think it&apos;s the most perfect
-          city in the world. I love how the entire city is frozen for seven
-          months and when it thaws everyone comes outside to have an idyllic
-          summer. I love the buses and the trains. I love the lake. I love the
-          people. Long term, I would love to use my skillset to give back to a
-          city that has given so much to me.
+          city in the world. I love the buses and the trains. I love the lake. I love the people. Long term, I would love to use my skillset to give back to a city that has given so much to me.
         </p>
-
-        <div className="img-container">
-          <div>
-            <img src={amyPic} className="amy-pic" alt="a headshot of me, Amy Corson"/>
-            <p className="caption">me</p>
-          </div>
-          <div>
-            <img src={mrMan} className="mm-pic" alt="A comedy show poster for a show called MR. MAN" />
-            <p className="caption">poster for a show I did last year!</p>
-          </div>
-          <div>
-            <img src={lake} alt="Lake Michigan" className="lake-pic"/>
-            <p className="caption">love of my life, Lake Michigan</p>
-          </div>
-          
-        </div>
       </div>
 
       <Footer />

@@ -2,6 +2,7 @@ import { CASE_STUDY } from "../util/constants";
 
 // import dtSelectorGif from "../assets/case-study/dt-selector.gif";
 import modeSelectorGif from "../assets/case-study/mode-hover.gif";
+import dtSelectorGif from "../assets/case-study/dt-selector.gif";
 import dartSettings from "../assets/case-study/research/dart-settings.png";
 import googleSettings from "../assets/case-study/research/google-settings.png";
 import metroTransitSettings from "../assets/case-study/research/metro-transit-settings.png";
@@ -30,6 +31,22 @@ const quoteBlock = (quote: string) => {
   );
 };
 
+const notableLinks: Array<{ name: string; url: string }> = [
+  {
+    name: "Figma designs",
+    url: "https://www.figma.com/design/YcpqCA9isJphQWarS9FEVv/Trip-Plan?node-id=0-229&t=SiqFd7D4A0I6zjgG-1",
+  },
+  {
+    name: "Pull Request: Mode Subsettings Panel in Component Library",
+    url: "https://github.com/opentripplanner/otp-ui/pull/749",
+  },
+  {
+    name: "Pull Request: Advanced Settings Panel",
+    url: "https://github.com/opentripplanner/otp-react-redux/pull/1249",
+  },
+  { name: "Live Deployment", url: "https://soundrideguide.com/#/" },
+];
+
 const AdvancedSettingsCase = () => {
   const { myRole, team, duration } = CASE_STUDY.details;
   return (
@@ -52,7 +69,6 @@ const AdvancedSettingsCase = () => {
         <div className="details">
           <div className="my-role">
             <span className="header">my role</span>
-
             <ul>
               {myRole.map((detail) => (
                 <li key={detail}>{detail}</li>
@@ -75,6 +91,26 @@ const AdvancedSettingsCase = () => {
           </div>
         </div>
         <section>
+          <h2>tl;dr</h2>
+          <p>
+            Our legacy trip-planning app wasn&apos;t working for users. With the
+            help of our client&apos;s design team, we redesigned the main user
+            flow. The result led to a{" "}
+            <strong>ten point jump in System Usability Scale Score.</strong>
+          </p>
+          <h3>See the work:</h3>
+          <ul>
+            {notableLinks.map((link) => (
+              <li key={link.name}>
+                <ExternalLinkWithIcon
+                  url={link.url}
+                  string={link.name}
+                  classNames="icon-on-hover"
+                />
+              </li>
+            ))}
+          </ul>
+
           <h2>background and problem</h2>
           <h3>What is OTP?</h3>
           <p>
@@ -91,29 +127,37 @@ const AdvancedSettingsCase = () => {
             the user is going, and how they want to get there.
           </p>
           <h3>So What’s the Issue?</h3>
-          <div className="problem-statement">
-            <p className="statement-block">
-              In early 2024, our client Sound Transit conducted a usability
-              study for our Digital Assistant Project, and found that users felt
-              that trip settings such as walk reluctance and accessible routing
-              were difficult to discover. Additionally, the hover effect wasn’t
-              easy to use on mobile.
-              <p>
-                <strong>
-                  Our application was re-inventing the wheel rather than using
-                  common industry standards in UX. This was a problem because
-                  users were struggling to use the application’s main trip
-                  planning functionality.
-                </strong>
-              </p>
+          <p className="statement-block">
+            In early 2024, our client Sound Transit conducted a usability study
+            for our Digital Assistant Project, and found that users felt that
+            trip settings such as walk reluctance and accessible routing were
+            difficult to discover. Additionally, the hover effect wasn’t easy to
+            use on mobile.
+            <p>
+              <strong>
+                Our application was re-inventing the wheel rather than using
+                common industry standards in UX. This was a problem because
+                users were struggling to use the application’s main trip
+                planning functionality.
+              </strong>
             </p>
-            <div className="design-gif">
+          </p>
+          <div className="design-gifs">
+            <div>
               <img
-                src={modeSelectorGif}
-                alt="Animation of previous trip form design, with hoverable subsettings"
-                title="Animation of previous trip form design, with hoverable subsettings"
-              />
-              <p className="caption">Mode selector with on-hover subsettings</p>
+              src={modeSelectorGif}
+              alt="Animation of previous trip form design, with hoverable subsettings"
+              title="Animation of previous trip form design, with hoverable subsettings"
+            />
+            <p className="caption">Mode selector with on-hover subsettings</p>
+            </div>
+            <div>
+              <img
+              src={dtSelectorGif}
+              alt="Animation of previous date time selector, with hoverable subsettings"
+              title="Animation of previous date time selector, with hoverable subsettings"
+            />
+            <p className="caption">Date/Time selector with on-hover subsettings</p>
             </div>
           </div>
         </section>

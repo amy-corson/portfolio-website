@@ -85,6 +85,7 @@ nav ul {
     .nav-drawer-toggle {
         background: transparent;
         border: none;
+        cursor: pointer;
         color: colors.$day-300;
         display: none;
     }
@@ -149,12 +150,10 @@ nav ul {
         li a {
             text-align: center;
         }
-
-        .external-link {
+        .icon-on-hover svg {
             gap: 0;
-        }
-        svg {
-            display: none;
+
+            opacity: 100%;
         }
     }
 }
