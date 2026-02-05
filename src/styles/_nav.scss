@@ -165,6 +165,38 @@ nav ul {
     }
 }
 
+@keyframes drop-in {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0%;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 100%;
+    }
+}
+
+@mixin dropInDelay($time) {
+    animation: drop-in forwards 300ms $time linear;
+}
+
+// These shouldn't "drop in" each time the user navigates, so make sure it's only happening on intiial load
+// I also only have them set to the home page. 
+.city:not(.page-enter-done, .page-enter-active, .page-enter, .page-exit-done, .page-exit, .page-exit-active) {
+    .external-links.home-external-links li {
+        opacity: 0%;
+        &:nth-of-type(1) {
+            @include dropInDelay(0ms);
+        }
+        &:nth-of-type(2) {
+            @include dropInDelay(150ms);
+        }
+        &:nth-of-type(3) {
+            @include dropInDelay(300ms);
+        }
+    }
+}
+
 @media (max-width: 700px) {
     .nav-ribbon {
         .nav-drawer-toggle {

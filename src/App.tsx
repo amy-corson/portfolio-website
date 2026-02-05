@@ -5,7 +5,7 @@ import City from "./components/City";
 import Ribbon from "./components/Ribbon";
 import { ROUTES } from "./util/constants";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
-import { isMobile } from "./util/isMobile";
+import { isMobile, pageName } from "./util/util";
 
 const mobile = isMobile();
 const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
@@ -14,10 +14,7 @@ const skipNavigation = () => document.querySelector('main')?.focus()
 function App() {
   const [isNight, setIsNight] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const path = location.pathname;
-  const slashIndex = path.lastIndexOf("/");
-  const smallPath = path.substring(slashIndex + 1);
-  const page = smallPath ? smallPath : "home";
+  const page = pageName()
 
   const currentOutlet = useOutlet();
   const subPaths = ROUTES.filter((route) => route.children).flatMap((route) =>
@@ -29,7 +26,7 @@ function App() {
     })
   );
   const nodeRef = [...ROUTES, ...subPaths].find(
-    (route) => route?.path === path
+    (route) => route?.path === location.pathname
   )?.nodeRef;
 
   const shouldTransitionDelay = !mobile && !isReduced;
@@ -37,7 +34,7 @@ function App() {
   return (
     <SwitchTransition>
       <CSSTransition
-        key={path}
+        key={location.pathname}
         nodeRef={nodeRef}
         timeout={shouldTransitionDelay ? 400 : 0}
         classNames="page"

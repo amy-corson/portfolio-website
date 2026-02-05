@@ -3,9 +3,12 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { Tooltip } from "@mui/material";
 import { useState } from "react";
+import { pageName } from "../util/util";
 
 const ExternalSocialLinks = () => {
   const [buttonCopied, setButtonCopied] = useState(false);
+
+  const path = pageName()
 
 
   const onClick = () => {
@@ -14,7 +17,7 @@ const ExternalSocialLinks = () => {
     setTimeout(() => setButtonCopied(false), 2000)
   }
   return (
-    <ul className="external-links">
+    <ul className={`external-links ${path}-external-links`}>
       <li>
         <a href="https://github.com/amy-corson" aria-label="Github (Opens in external tab)" title="Github">
           <GitHubIcon />

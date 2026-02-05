@@ -385,9 +385,6 @@
 .city.night .skyline {
   fill: #4E6255;
 }
-.city.night .sun {
-  display: none;
-}
 .city.night .train-car .train {
   fill: #4E6255;
 }
@@ -428,6 +425,18 @@ svg.train-car .train {
 }
 svg.train-car .windows {
   color: #F3EBE3;
+}
+
+@keyframes SunMoonOut {
+  0% {
+    transform: translate(0px 0px);
+  }
+  100% {
+    transform: translate(-150px 300px);
+  }
+}
+.night .sun {
+  animation: sunMoonOut 3s linear forwards;
 }
 
 @media (max-width: 1000px) {
@@ -647,6 +656,29 @@ nav ul button {
   color: #fff;
 }
 
+@keyframes drop-in {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 100%;
+  }
+}
+.city:not(.page-enter-done, .page-enter-active, .page-enter, .page-exit-done, .page-exit, .page-exit-active) .external-links.home-external-links li {
+  opacity: 0%;
+}
+.city:not(.page-enter-done, .page-enter-active, .page-enter, .page-exit-done, .page-exit, .page-exit-active) .external-links.home-external-links li:nth-of-type(1) {
+  animation: drop-in forwards 300ms 0ms linear;
+}
+.city:not(.page-enter-done, .page-enter-active, .page-enter, .page-exit-done, .page-exit, .page-exit-active) .external-links.home-external-links li:nth-of-type(2) {
+  animation: drop-in forwards 300ms 150ms linear;
+}
+.city:not(.page-enter-done, .page-enter-active, .page-enter, .page-exit-done, .page-exit, .page-exit-active) .external-links.home-external-links li:nth-of-type(3) {
+  animation: drop-in forwards 300ms 300ms linear;
+}
+
 @media (max-width: 700px) {
   .nav-ribbon .nav-drawer-toggle {
     display: block;
@@ -664,6 +696,7 @@ nav ul button {
   position: relative;
   width: 85%;
   z-index: 5;
+  min-height: 82vh;
 }
 .page-container h1 {
   margin-bottom: 0em;
@@ -804,22 +837,36 @@ nav ul button {
     grid-template-columns: 1fr;
   }
 }
+.about-page p:first-of-type {
+  margin-top: 0;
+}
 .about-page .img-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  border-radius: 4px;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  background-color: white;
+  padding: 10px 10px 20px 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  max-width: 270px;
+  margin: 20px auto;
+}
+.about-page .img-container p {
+  margin: 20px 0;
 }
 .about-page img {
-  height: 400px;
   -o-object-fit: cover;
      object-fit: cover;
-}
-.about-page .lake-pic {
-  width: 95%;
+  max-width: 250px;
 }
 
+@media (min-width: 500px) {
+  .about-page .img-container {
+    width: auto;
+    float: left;
+    margin: 0 30px 15px 0px;
+  }
+}
 .app {
   position: relative;
 }

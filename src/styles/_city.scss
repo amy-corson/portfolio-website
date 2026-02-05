@@ -203,10 +203,6 @@
         fill: colors.$night-300;
     }
 
-    .sun {
-        display: none;
-    }
-
     .train-car {
         .train {
             fill: colors.$night-300;
@@ -263,6 +259,19 @@ svg.train-car {
     .windows {
         color: colors.$day-50;
     }
+}
+
+@keyframes SunMoonOut {
+    0% {
+        transform: translate(0px 0px);
+    }
+    100% {
+        transform: translate(-150px 300px);
+    }
+}
+
+.night .sun {
+    animation: sunMoonOut 3s linear forwards;
 }
 
 @media (max-width: 1000px) {
