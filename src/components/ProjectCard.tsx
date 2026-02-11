@@ -21,7 +21,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
       href={internalLink ? "" : project.url}
     >
       <div className="project-image">
-        <img src={project.image} />
+        <img src={project.image} loading="lazy" />
         <div className="card-text">{project.linkText}</div>
       </div>
       <p className="external-link">

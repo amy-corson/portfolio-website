@@ -24,6 +24,11 @@
 
 .big {
     grid-column: 1 / span 2;
+    
+    &.project-card .project-image {
+        // Big cards: 1536 × 900 (aspect ratio = 1536/900 = 1.7067)
+        aspect-ratio: 492 / 190;
+    }
 }
 
 .project-card {
@@ -60,7 +65,8 @@
         padding: 20px;
         padding-bottom: 10px;
         position: relative;
-        transition: all 150ms ease;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        aspect-ratio: 492 / 425;
 
         > * {
             transition: all 150ms ease;
@@ -154,4 +160,14 @@
     .projects {
         grid-template-columns: 1fr;
     }
+
+    .big {
+        grid-column: 1;
+        
+        .project-image {
+            // On mobile, big cards become regular size
+            aspect-ratio: 492 / 642;
+        }
+    }
 }
+
