@@ -19,7 +19,7 @@ const ExternalSocialLinks = () => {
   return (
     <ul className={`external-links ${path}-external-links`}>
       <li>
-        <a href="https://github.com/amy-corson" aria-label="Github (Opens in external tab)" title="Github">
+        <a href="https://github.com/amy-corson-ibigroup" aria-label="Github (Opens in external tab)" title="Github">
           <GitHubIcon />
         </a>
       </li>
